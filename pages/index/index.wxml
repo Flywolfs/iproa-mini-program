@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+<view class="backView">
+  <image class="backImage" src="/images/iproa-icon.png"></image>
+</view>
+</view>
