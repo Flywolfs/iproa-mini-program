@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/table-start/table-start",
-    "pages/my-apply/my-apply",
+    "pages/attention/attention",
+    "pages/viptype/viptype",
+    "pages/myapply/myapply",
     "pages/logs/logs"
   ],
   "window": {
@@ -18,21 +19,21 @@
       "borderStyle": "black",
       "list": [
         {
-        "selectedIconPath": "images/home_start.png",
-        "iconPath": "images/home_end.png",
+        "selectedIconPath": "images/tabbar/home_start.png",
+        "iconPath": "images/tabbar/home_end.png",
         "pagePath": "pages/index/index",
         "text": "首页"
         },
         {
-          "selectedIconPath": "images/write_start.png",
-          "iconPath": "images/write_end.png",
-          "pagePath": "pages/table-start/table-start",
+          "selectedIconPath": "images/tabbar/write_start.png",
+          "iconPath": "images/tabbar/write_end.png",
+          "pagePath": "pages/attention/attention",
           "text": "申请填写"
         },
         {
-          "selectedIconPath": "images/user_start.png",
-          "iconPath": "images/user_end.png",
-          "pagePath": "pages/my-apply/my-apply",
+          "selectedIconPath": "images/tabbar/user_start.png",
+          "iconPath": "images/tabbar/user_end.png",
+          "pagePath": "pages/myapply/myapply",
           "text": "我的申请"
         }
       ]

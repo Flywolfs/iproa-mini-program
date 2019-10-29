@@ -1,0 +1,25 @@
+<!-- attention.wxml -->
+<view class="wrapper">
+  <view class="main title">
+    <view class="titleItem">注意事项</view>
+    <view class="titleItem">仅适用于香港永久居民</view>
+  </view>
+  <view class="main table">
+    <view class="trh">
+      <view class="tdh">学历</view>
+      <view class="tdh">CS/CE/EE/ICT相关经验</view>
+    </view>
+    <view class="trb ">
+      <view class="tdb">相关大学学位或专业资格</view>
+      <view class="tdb">2年</view>
+    </view>
+    <view class="trb ">
+      <view class="tdb">ICT高级文凭、副学士</view>
+      <view class="tdb">6年</view>
+    </view>
+  </view>
+  <view class="main apply">
+    <button type="primary" bindtap="next">继续申请</button>
+  </view>
+</view>
+
