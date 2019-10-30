@@ -16,25 +16,25 @@ page{
 
 .progress{
   height: 100rpx;
-  background-color:red;
+  background-color:white;
   text-align: center;
 }
 
 .title{
   height: 100rpx;
-  background-color:green;
+  background-color:white;
   text-align: center;
 }
 
 .table{
   height: 800rpx;
-  background-color:blue;
+  background-color:white;
   text-align: center;
 }
 
 .buttons{
   height: 200rpx;
-  background-color:purple;
+  background-color:white;
   text-align: center;
 }
 

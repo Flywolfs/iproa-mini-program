@@ -25,6 +25,7 @@ Page({
   },
   radioChange: function (e) {
     var index = e.currentTarget.dataset.index;
+    console.log(index)
     var arr = this.data.radioValues;
     for (var v in arr) {
       if (v == index) {
@@ -35,6 +36,11 @@ Page({
     }
     this.setData({
       radioValues: arr
+    })
+  },
+  next:function(e){
+    wx.reLaunch({
+      url: '/pages/parta/parta',
     })
   }
 })

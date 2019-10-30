@@ -1,20 +1,23 @@
 <view class="wrapper">
   <view class="main progress">
     <progress percent="16" stroke-width="12"/>
-  </view>
+  </view> 
   <view class="main title">
       <text>选择会员类别</text>
   </view>
   <view class="main table">
-    <view bindchange="radioChange">
+    <!-- <view bindchange="radioChange"> -->
     <view class='list_item' wx:for="{{radioValues}}" data-index="{{index}}" bindtap='radioChange' style="{{index == radioValues.length-1?'border-bottom:0':''}}">
-    <text style='color:rgb(96,96,96)'>{{item.type}}</text>
     <view wx:if="{{item.selected}}" class='item'>
     <view style='width:20rpx;height:20rpx;background-color:rgb(144,144,144);border-radius:100%;'></view>
     </view> 
     <view wx:else class='item'></view> 
+    <text style='color:rgb(96,96,96)'>{{item.type}}</text>
+    <text style='color:rgb(96,96,96)'>{{item.price}}</text>
     </view>
-    </view>
+    <!-- </view> -->
 </view>
-  <view class="main buttons"></view>
+  <view class="main buttons">
+  <button type="primary" bindtap="next">下一步</button>
+  </view>
 </view>

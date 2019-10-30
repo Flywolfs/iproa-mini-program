@@ -1,0 +1,114 @@
+<view class="wrapper"> 
+  <view class="main progess">
+   <progress percent="32" stroke-width="12"/>
+  </view>
+  <view class="main title">
+  <text>PartA 个人基本信息</text>
+  </view>
+  <view class="main table">
+    <view class="table_tr">
+      <view class="tr_key" >{{table_values[0].name}}</view>
+      <view class="tr_value">
+        <view class="select_box">
+          <view class="select" catchtap='selectTap'>
+            <text class="select_text">{{selectData[index]}}</text>
+            <image class='select_img {{selectShow&&"select_img_rotate"}}'  src="/images/parta/down.png" ></image>
+          </view>
+              <view class='option_box' style='height:{{selectShow?(selectData.length>5?325:selectData.length*50):0}}rpx;'>
+                  <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+              </view>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key">{{table_values[1].name}}</view>
+      <view class="tr_value">
+        <view class="sblock">
+          <input class="write"  placeholder="姓"></input>
+        </view>
+        <view class="sblock">
+          <input class="write" placeholder="名"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key">{{table_values[2].name}}</view>
+      <view class="tr_value">
+         <view class="sblock">
+          <input class="write"  placeholder="First Name"></input>
+        </view>
+        <view class="sblock">
+          <input class="write" placeholder="Other Name"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key">{{table_values[3].name}}</view>
+      <view class="tr_value">
+        <radio-group>
+          <radio value="male">男</radio>
+          <radio value="female">女</radio>
+        </radio-group>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key">{{table_values[4].name}}</view>
+      <view class="tr_value">
+         <view class="mblock">
+          <input class="write"  placeholder="HKID"></input>
+         </view>
+         <button type="primary" style="height:80%;font-size:25rpx">拍照</button>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key">{{table_values[5].name}}</view>
+      <view class="tr_value">
+        <view class="lblock">
+          <input class="write"  placeholder="邮箱"></input>
+         </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key">{{table_values[6].name}}</view>
+      <view class="tr_value">
+        <view class="ssblock">
+          <input class="write"  placeholder="年"></input>
+        </view>
+        <view class="ssblock">
+          <input class="write"  placeholder="月"></input>
+        </view>
+        <view class="ssblock">
+          <input class="write"  placeholder="日"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key">{{table_values[7].name}}</view>
+      <view class="tr_value">
+        <view class="lblock">
+          <input class="write"  placeholder="电话号码"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key">{{table_values[8].name}}</view>
+      <view class="tr_value">
+        <view class="ssblock">
+          <input class="write"  placeholder="区"></input>
+        </view>
+        <view class="ssblock">
+          <input class="write"  placeholder="街"></input>
+        </view>
+        <view class="ssblock">
+          <input class="write"  placeholder="楼"></input>
+        </view>
+          <view class="ssblock">
+          <input class="write"  placeholder="门牌"></input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="main buttons">
+  <button type="primary" bindtap="next">下一步</button>
+  </view>
+</view>

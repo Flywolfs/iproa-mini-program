@@ -1,0 +1,147 @@
+page{
+  height: 100%;
+}
+
+.main{
+  width: 800rpx;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%
+}
+
+progress{
+  height: 100rpx;
+  background-color:white;
+  text-align: center;
+}
+
+.title{
+  height: 100rpx;
+  background-color:white;
+  text-align: center;
+}
+
+.table{
+  height:2500rpx;
+  background-color:white;
+  text-align: center;
+}
+
+.table_tr{
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+}
+
+.tr_key{
+ width:40%;
+ text-align: center;
+ font-size: 35rpx;
+}
+
+.tr_value{
+  width: 60%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.write{
+  width: 100%;
+  height: 100%
+}
+
+.ssblock{
+  width:25%;
+  height: 80%;
+   border-radius: 8rpx;
+   border: 1rpx solid #777777;
+}
+
+.sblock{
+  width: 50%;
+  height: 80%;
+   border-radius: 8rpx;
+   border: 1rpx solid #777777;
+}
+
+.mblock{
+  width: 75%;
+  height: 80%;
+   border-radius: 8rpx;
+   border: 1rpx solid #777777;
+}
+
+.lblock{
+  width: 100%;
+  height: 80%;
+   border-radius: 8rpx;
+   border: 1rpx solid #777777;
+}
+
+.select_box{
+  width: 90%;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+.select{
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  align-items: center;
+  border: 1rpx solid #777777;
+}
+
+.select_text{
+  font-size: 40rpx;
+  color: #777777;
+  width: 70%;
+  border-width: 2rpx;
+  border-color: gray;
+}
+
+.select_img{
+  width: 70rpx;
+  height: 70rpx;
+  display: block;
+  transition:transform 0.3s;
+}
+
+.select_box .select .select_img_rotate{
+  transform:rotate(180deg); 
+}
+
+.select_box .option_box{
+  position: absolute;
+  top: calc(100% - 1px);
+  width: 100%;
+  box-sizing: border-box;
+  height: 0;
+  overflow-y: auto;
+  background: #fff;
+  transition: height 0.3s;
+  border-left:1px solid #efefef;
+  border-right:1px solid #efefef;
+}
+
+.select_box .option_box .option{
+  display: block;
+  line-height: 30rpx; 
+  font-size: 35rpx;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  padding: 10rpx;
+}
+
+.buttons{
+  height: 200rpx;
+  background-color:white;
+  text-align: center;
+}

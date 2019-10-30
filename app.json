@@ -4,6 +4,7 @@
     "pages/attention/attention",
     "pages/viptype/viptype",
     "pages/myapply/myapply",
+    "pages/parta/parta",
     "pages/logs/logs"
   ],
   "window": {
