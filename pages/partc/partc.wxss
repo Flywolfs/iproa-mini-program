@@ -20,16 +20,36 @@ progress{
   text-align: center;
 }
 
+.add_del{
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.add_del_button{
+   border-radius: 8rpx;
+   border: 1rpx solid #777777;
+   margin: 0 5%;
+   width: 40%;
+   height: 100rpx;
+}
+
 .title{
   height: 100rpx;
   background-color:white;
   text-align: center;
 }
 
-.table{
-  height:2500rpx;
+/* .table{
   background-color:white;
   text-align: center;
+} */
+
+.working_block{
+  background-color:aqua;
+  height: 600rpx;
+  width: 90%;
 }
 
 .table_tr{
@@ -41,7 +61,7 @@ progress{
 .tr_key{
  width:30%;
  text-align: left;
- font-size: 28rpx;
+ font-size:35rpx;
  margin: 0 5%;
   display: flex;
   align-items: center;

@@ -7,7 +7,9 @@
   </view>
   <view class="main table">
     <view class="table_tr">
-      <view class="subtitle"></view>
+     <view class="tr_value">
+      <view class="sblock">文凭</view>
+      </view>
     </view>
     <view class="table_tr">
       <view class="tr_key" >{{table_values[0].name}}</view>
@@ -26,82 +28,131 @@
     <view class="table_tr">
       <view class="tr_key">{{table_values[1].name}}</view>
       <view class="tr_value">
-    
+        <view class="lblock">
+         <input class="write"  placeholder="院校1"></input>
+        </view>
       </view>
     </view>
     <view class="table_tr">
       <view class="tr_key">{{table_values[2].name}}</view>
       <view class="tr_value">
-
+      <view class="ssblock">
+         <input class="write"  placeholder="年"></input>
+      </view>
+      <view class="ssblock">
+         <input class="write"  placeholder="月"></input>
+      </view>
+      <view class="ssblock">
+         <input class="write"  placeholder="日"></input>
+      </view>
       </view>
     </view>
     <view class="table_tr">
       <view class="tr_key">{{table_values[3].name}}</view>
       <view class="tr_value">
-        
+        <view class="lblock">
+         <input class="write"  placeholder="专业1"></input>
       </view>
     </view>
+    </view>
+     <view class="table_tr">
+      <button>上传文凭1照片</button>
+     </view>
     <view class="table_tr">
       <view class="tr_key">{{table_values[4].name}}</view>
       <view class="tr_value">
-         
+         <view class="lblock">
+         <input class="write"  placeholder="院校2"></input>
+        </view>
       </view>
     </view>
     <view class="table_tr">
       <view class="tr_key">{{table_values[5].name}}</view>
       <view class="tr_value">
-        
+      <view class="ssblock">
+         <input class="write"  placeholder="年"></input>
+      </view>
+      <view class="ssblock">
+         <input class="write"  placeholder="月"></input>
+      </view>
+      <view class="ssblock">
+         <input class="write"  placeholder="日"></input>
+      </view>
       </view>
     </view>
     <view class="table_tr">
       <view class="tr_key">{{table_values[6].name}}</view>
       <view class="tr_value">
-       
+       <view class="lblock">
+         <input class="write"  placeholder="专业2"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <button>上传文凭２照片</button>
+     </view>
+    <view class="table_tr">
+      <view class="tr_value">
+      <view class="sblock">专业证书*</view>
       </view>
     </view>
     <view class="table_tr">
       <view class="tr_key">{{table_values[7].name}}</view>
       <view class="tr_value">
-        
+        <view class="lblock">
+         <input class="write"  placeholder="授权机构1"></input>
+        </view>
       </view>
     </view>
     <view class="table_tr">
       <view class="tr_key">{{table_values[8].name}}</view>
       <view class="tr_value">
-        
+        <view class="lblock">
+         <input class="write"  placeholder="证书名称1"></input>
+        </view>
       </view>
     </view>
     <view class="table_tr">
       <view class="tr_key">{{table_values[9].name}}</view>
       <view class="tr_value">
-        
+        <view class="lblock">
+         <input class="write"  placeholder="获取日期1"></input>
+        </view>
       </view>
     </view>
+     <view class="table_tr">
+      <button>上传证书1扫描件*</button>
+     </view>
     <view class="table_tr">
       <view class="tr_key">{{table_values[10].name}}</view>
       <view class="tr_value">
-        
+        <view class="lblock">
+         <input class="write"  placeholder="授权机构2"></input>
+        </view>
       </view>
     </view>
     <view class="table_tr">
       <view class="tr_key">{{table_values[11].name}}</view>
       <view class="tr_value">
-        
+        <view class="lblock">
+         <input class="write"  placeholder="证书名称2"></input>
+        </view>
       </view>
     </view>
     <view class="table_tr">
       <view class="tr_key">{{table_values[12].name}}</view>
       <view class="tr_value">
-        
+        <view class="lblock">
+         <input class="write"  placeholder="获取日期2"></input>
+        </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">{{table_values[13].name}}</view>
-      <view class="tr_value">
-        
-      </view>
+      <button>上传证书2扫描件*</button>
+   </view>
+    <view class="table_tr">
+     *注:上述标记*的栏目非必需
     </view>
-
   </view>
   <view class="main buttons">
     <button type="primary" bindtap="next">下一步</button>

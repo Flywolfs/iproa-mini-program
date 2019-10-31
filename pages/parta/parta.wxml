@@ -14,9 +14,9 @@
             <text class="select_text">{{selectData[index]}}</text>
             <image class='select_img {{selectShow&&"select_img_rotate"}}'  src="/images/parta/down.png" ></image>
           </view>
-              <view class='option_box' style='height:{{selectShow?(selectData.length>5?325:selectData.length*50):0}}rpx;'>
-                  <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
-              </view>
+          <view class='option_box' style='height:{{selectShow?(selectData.length>5?325:selectData.length*50):0}}rpx;'>
+              <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+          </view>
         </view>
       </view>
     </view>

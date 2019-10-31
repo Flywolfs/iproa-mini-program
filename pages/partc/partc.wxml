@@ -1,0 +1,37 @@
+<!--pages/partc/partc.wxml-->
+<view class="wrapper"> 
+        <view class="main progess">
+                <progress percent="64" stroke-width="12"/>
+        </view>
+        <view class="main title">
+                <text>PartC 工作历史</text>
+        </view>
+        <view class="main add_del">
+                <view class="add_del_button" bindtap="insert">增加</view>
+                <view class="add_del_button" bindtap="delBind">删除</view>
+        </view>
+        <view class="main title">
+                <view class="table_tr">
+                        <view class="tr_key" >{{table_values[0].name}}</view>
+                        <view class="tr_value">
+                                <view class="select_box">
+                                        <view class="select" catchtap='selectTap'>
+                                                <text class="select_text">{{selectData[index]}}</text>
+                                                <image class='select_img {{selectShow&&"select_img_rotate"}}'  src="/images/parta/down.png" ></image>
+                                        </view>
+                                        <view class='option_box' style='height:{{selectShow?(selectData.length>5?325:selectData.length*50):0}}rpx;'>
+                                                <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+                                        </view>
+                                </view>
+                        </view>
+                </view>
+        </view>
+        <view class="main table">
+                <view wx:for="{{checkbox}}" class="working_block">
+                </view>
+        </view>
+        <view class="main buttons">
+          <button type="primary" bindtap="next">下一步</button>
+        </view>
+</view> 
+ 

@@ -1,0 +1,22 @@
+/* pages/partd/partd.wxss */
+page{
+  height: 100%;
+}
+
+.main{
+  width: 800rpx;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%
+}
+
+progress{
+  height: 100rpx;
+  background-color:white;
+  text-align: center;
+}

@@ -5,6 +5,10 @@
     "pages/viptype/viptype",
     "pages/myapply/myapply",
     "pages/parta/parta",
+    "pages/partb/partb",
+    "pages/partc/partc",
+    "pages/partd/partd",
+    "pages/parte/parte",  
     "pages/logs/logs"
   ],
   "window": {
