@@ -1,5 +1,75 @@
 // pages/parte/parte.js
+
+var context = null;// 使用 wx.createContext 获取绘图上下文 context
+var isButtonDown = false;
+var arrx = [];
+var arry = [];
+var arrz = [];
+var canvasw = 0;
+var canvash = 0;
 Page({
+  canvasIdErrorCallback: function (e) {
+    console.error(e.detail.errMsg)
+  },
+
+  canvasStart: function (event) {
+    isButtonDown = true;
+    arrz.push(0);
+    arrx.push(event.changedTouches[0].x);
+    arry.push(event.changedTouches[0].y);
+    //context.moveTo(event.changedTouches[0].x, event.changedTouches[0].y);
+
+  },
+
+  canvasMove: function (event) {
+    if (isButtonDown) {
+      arrz.push(1);
+      arrx.push(event.changedTouches[0].x);
+      arry.push(event.changedTouches[0].y);
+      // context.lineTo(event.changedTouches[0].x, event.changedTouches[0].y);
+      // context.stroke();
+      // context.draw()
+      console.log(arrz);
+
+    };
+
+    for (var i = 0; i < arrx.length; i++) {
+      if (arrz[i] == 0) {
+        context.moveTo(arrx[i], arry[i])
+      } else {
+        context.lineTo(arrx[i], arry[i])
+      };
+
+    };
+    context.clearRect(0, 0, canvasw, canvash);
+
+    context.setStrokeStyle('#000000');
+    context.setLineWidth(4);
+    context.setLineCap('round');
+    context.setLineJoin('round');
+    context.stroke();
+
+    context.draw(false);
+  },
+
+  canvasEnd: function (event) {
+    isButtonDown = false;
+  },
+
+  cleardraw: function () {
+    //清除画布
+    arrx = [];
+    arry = [];
+    arrz = [];
+    context.clearRect(0, 0, canvasw, canvash);
+    context.draw(false);
+  },
+
+  previous: function (e) {
+    wx.reLaunch({
+      url: '/pages/partd/partd',
+    })
+  },
 
   /**
    * 页面的初始数据
@@ -12,7 +82,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    context = wx.createCanvasContext('signature');
+    context.beginPath()
+    context.setStrokeStyle('#000000');
+    context.setLineWidth(4);
+    context.setLineCap('round');
+    context.setLineJoin('round');
   },
 
   /**

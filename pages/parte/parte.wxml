@@ -1,2 +1,22 @@
 <!--pages/parte/parte.wxml-->
-<text>pages/parte/parte.wxml</text>
+<view class="wrapper"> 
+        <view class="main progess">
+                <progress percent="100" stroke-width="12"/>
+        </view>
+        <view class="main title">
+                <text>PartE 个人签名</text>
+        </view>
+        <view class="main table">
+          <canvas canvas-id="signature" class="signature" disable-scroll="true" bindtouchstart="canvasStart" bindtouchmove="canvasMove" bindtouchend="canvasEnd" touchcancel="canvasEnd" binderror="canvasIdErrorCallback"></canvas>
+        </view>
+        <view class="main buttons">
+         <button type="default" bindtap="cleardraw">清除签名</button>
+        </view>
+         <view class="main buttons">
+         </view>
+        <view class="main buttons">
+          <button type="primary" bindtap="previous">上一步</button>
+          <button type="primary" bindtap="next">确认提交</button>
+        </view>
+</view> 
+ 

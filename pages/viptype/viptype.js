@@ -42,5 +42,11 @@ Page({
     wx.reLaunch({
       url: '/pages/parta/parta',
     })
+  },
+
+  previous:function(e){
+    wx.reLaunch({
+      url: '/pages/attention/attention',
+    })
   }
 })

@@ -34,5 +34,11 @@ Page({
       wx.reLaunch({
         url: '/pages/partb/partb',
       })
-    }
+    },
+
+  previous: function (e) {
+    wx.reLaunch({
+      url: '/pages/viptype/viptype',
+    })
+  }
 })

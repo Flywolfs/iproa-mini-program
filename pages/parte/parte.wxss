@@ -1,1 +1,187 @@
 /* pages/parte/parte.wxss */
+page{
+  height: 100%;
+}
+
+.main{
+  width: 800rpx;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%
+}
+
+progress{
+  height: 100rpx;
+  background-color:white;
+  text-align: center;
+}
+
+.add_del{
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.add_del_button{
+   border-radius: 8rpx;
+   border: 1rpx solid #777777;
+   margin: 0 5%;
+   width: 40%;
+   height:80rpx;
+   text-align: center;
+}
+
+.title{
+  height: 100rpx;
+  background-color:white;
+  text-align: center;
+}
+
+.table{
+  background-color:white;
+  align-items: center;
+  text-align: center;
+}
+
+.working_block{
+  background-color:rgb(229, 231, 231);
+  height: 500rpx;
+  width: 90%;
+  margin: 5% 5%;
+}
+
+.table_tr{
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+}
+
+.tr_key{
+ width:30%;
+ text-align: left;
+ font-size:35rpx;
+ margin: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.tr_value{
+  width: 55%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+.write{
+  width: 100%;
+  height: 100%
+}
+
+.ssblock{
+  width:40%;
+  height: 80%;
+   border-radius: 8rpx;
+   border: 1rpx solid #777777;
+}
+
+.sblock{
+  width: 50%;
+  height: 80%;
+   border-radius: 8rpx;
+   border: 1rpx solid #777777;
+}
+
+.mblock{
+  width: 75%;
+  height: 80%;
+   border-radius: 8rpx;
+   border: 1rpx solid #777777;
+}
+
+.lblock{
+  width: 100%;
+  height: 80%;
+   border-radius: 8rpx;
+   border: 1rpx solid #777777;
+}
+
+.select_box{
+  width: 90%;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+.select{
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  align-items: center;
+  border: 1rpx solid #777777;
+}
+
+.select_text{
+  font-size: 40rpx;
+  color: #777777;
+  width: 70%;
+  border-width: 2rpx;
+  border-color: gray;
+}
+
+.select_img{
+  width: 70rpx;
+  height: 70rpx;
+  display: block;
+  transition:transform 0.3s;
+}
+
+.select_box .select .select_img_rotate{
+  transform:rotate(180deg); 
+}
+
+.select_box .option_box{
+  position: absolute;
+  top: calc(100% - 1px);
+  width: 100%;
+  box-sizing: border-box;
+  height: 0;
+  overflow-y: auto;
+  background: #fff;
+  transition: height 0.3s;
+  border-left:1px solid #efefef;
+  border-right:1px solid #efefef;
+}
+
+.select_box .option_box .option{
+  display: block;
+  line-height: 30rpx; 
+  font-size: 35rpx;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  padding: 10rpx;
+}
+
+.signature{
+  border: 5rpx solid #ccc;
+  width:90%;
+  height:250px;
+  margin: 5% 5%;
+}
+
+.buttons{
+  height: 100rpx;
+  background-color:white;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+

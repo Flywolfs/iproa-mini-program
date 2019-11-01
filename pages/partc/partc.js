@@ -48,6 +48,18 @@ Page({
     });
   },
 
+  next:function(e){
+      wx.reLaunch({
+              url: '/pages/partd/partd',
+    })
+  },
+
+  previous: function (e) {
+    wx.reLaunch({
+      url: '/pages/partb/partb',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,2 +1,41 @@
-<!--pages/partd/partd.wxml-->
-<text>pages/partd/partd.wxml</text>
+<view class="wrapper"> 
+        <view class="main progess">
+                <progress percent="80" stroke-width="12"/>
+        </view>
+        <view class="main title">
+                <text>PartD 推荐人</text>
+        </view>
+        <view class="main table">
+                <view class="table_tr">
+                        <view class="tr_key">{{table_values[0].name}}</view>
+                        <view class="tr_value">
+                                <view class="sblock"><input class="write" placeholder="姓"></input></view>
+                                <view class="sblock"><input class="write" placeholder="名"></input></view>
+                        </view>
+                </view>
+                <view class="table_tr">
+                        <view class="tr_key">{{table_values[1].name}}</view>
+                        <view class="tr_value">
+                                <view class="lblock"><input class="write" placeholder="ID号"></input></view>
+                        </view>
+                </view>
+                <view class="table_tr">
+                        <view class="tr_key">{{table_values[2].name}}</view>
+                        <view class="tr_value">
+                                <view class="sblock"><input class="write" placeholder="姓"></input></view>
+                                <view class="sblock"><input class="write" placeholder="名"></input></view>
+                        </view>
+                </view>
+                <view class="table_tr">
+                        <view class="tr_key">{{table_values[3].name}}</view>
+                        <view class="tr_value">
+                                <view class="lblock"><input class="write" placeholder="ID号"></input></view>
+                        </view>
+                </view>
+        </view>
+        <view class="main buttons">
+                <button type="primary" bindtap="previous">上一步</button>
+                <button type="primary" bindtap="next">下一步</button>
+        </view>
+</view> 
+ 

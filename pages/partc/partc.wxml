@@ -27,11 +27,41 @@
                 </view>
         </view>
         <view class="main table">
-                <view wx:for="{{checkbox}}" class="working_block">
+                <view wx:for="{{records}}" class="working_block">
+                        <view class="table_tr">
+                                <view class="tr_key">{{table_values[1].name}}</view>
+                                <view class="tr_value">
+                                        <view class="ssblock"><input class="write"  placeholder="开始时间"></input> </view>
+                                        To
+                                        <view class="ssblock"><input class="write"  placeholder="结束时间"></input> </view>
+                                </view>
+                        </view>
+                        <view class="table_tr">
+                                <view class="tr_key">{{table_values[2].name}}</view>
+                                <view class="tr_value">
+                                        <view class="lblock"><input class="write"  placeholder="公司名称"></input> </view>
+                                </view>
+                        </view>
+                        <view class="table_tr">
+                                <view class="tr_key">{{table_values[3].name}}</view>
+                                <view class="tr_value">
+                                        <view class="lblock"><input class="write"  placeholder="职位"></input> </view>
+                                </view>
+                        </view>
+                        <view class="table_tr">
+                                <view class="tr_key">{{table_values[4].name}}</view>
+                                <view class="tr_value">
+                                        <view class="lblock"><input class="write"  placeholder="主要职责"></input> </view>
+                                </view>
+                        </view>
+                        <view class="table_tr">
+                                 <button>上传工作证明</button>
+                        </view>
                 </view>
         </view>
         <view class="main buttons">
-          <button type="primary" bindtap="next">下一步</button>
+                <button type="primary" bindtap="previous">上一步</button>
+                <button type="primary" bindtap="next">下一步</button>
         </view>
 </view> 
  

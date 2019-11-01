@@ -18,6 +18,7 @@
     <!-- </view> -->
 </view>
   <view class="main buttons">
+  <button type="primary" bindtap="previous">上一步</button>
   <button type="primary" bindtap="next">下一步</button>
   </view>
 </view>

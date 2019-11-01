@@ -28,7 +28,7 @@ progress{
 
 .table{
   height: 1000rpx;
-  background-color:white;
+  background-color:rgb(255, 255, 255);
   text-align: center;
 }
 
@@ -93,6 +93,7 @@ progress{
   width: 90%;
   border-radius: 10rpx;
   position: relative;
+  z-index: 99;
 }
 
 .select{
@@ -130,8 +131,7 @@ progress{
   box-sizing: border-box;
   height: 0;
   overflow-y: auto;
-  z-index: 1;
-  background-color:white;
+  background:rgb(255, 255, 255);
   transition: height 0.3s;
   border-left:1px solid #efefef;
   border-right:1px solid #efefef;
@@ -148,7 +148,9 @@ progress{
 }
 
 .buttons{
-  height: 200rpx;
+  height: 100rpx;
   background-color:white;
   text-align: center;
+  display: flex;
+  flex-direction: row;
 }

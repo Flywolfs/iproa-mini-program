@@ -151,10 +151,11 @@
       <button>上传证书2扫描件*</button>
    </view>
     <view class="table_tr">
-     *注:上述标记*的栏目非必需
+        *注:上述标记*的栏目非必需
     </view>
   </view>
   <view class="main buttons">
-    <button type="primary" bindtap="next">下一步</button>
+  <button type="primary" bindtap="previous">上一步</button>
+  <button type="primary" bindtap="next">下一步</button>
   </view>
 </view>
