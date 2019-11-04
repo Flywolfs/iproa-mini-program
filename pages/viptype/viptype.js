@@ -1,16 +1,3 @@
-// const app = getApp()
-// Page({
-//   data:{
-//     vipValues:[
-//       {"type": "Life Fellow Member (voting membership)", "price": "HK$10,000(one - off)", "selected":false},
-//       { "type": "Fellow Member (voting membership)", "price": "HK$ 500/yr", "selected": false},
-//       {"type": "Life Full Member (voting membership)", "price": "HK$5,000 (one - off)", "selected": false},
-//       { "type": "Full Member (voting membership)", "price": "HK$250/yr", "selected": false},
-//       { "type": "Full Member (voting membership)", "price": "HK$400/3yrs", "selected": false}
-//     ]
-//   }
-// })
-
 Page({
   data: {
     radioValues: [
@@ -21,11 +8,20 @@ Page({
       { "type": "Full Member (voting membership)", "price": "HK$400/3yrs", "selected": false}
     ]
   },
-  onLoad: function (options) {
+
+  onReady: function (options) {
+    var storage = wx.getStorageSync('radioValues') || [];
+    if (storage != []){
+        // this.data.radioValues = storage;
+        this.setData({
+          radioValues : storage
+        })
+    }
   },
+
   radioChange: function (e) {
     var index = e.currentTarget.dataset.index;
-    console.log(index)
+    console.log(index);
     var arr = this.data.radioValues;
     for (var v in arr) {
       if (v == index) {
@@ -34,19 +30,25 @@ Page({
         arr[v].selected = false;
       }
     }
+    wx.setStorageSync("radioValues", arr);
+    // console.log(arr);
     this.setData({
       radioValues: arr
     })
   },
   next:function(e){
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/parta/parta',
     })
   },
 
   previous:function(e){
-    wx.reLaunch({
-      url: '/pages/attention/attention',
+    wx.setStorage({
+      key: "type",
+      data: '',
+    })
+    wx.navigateBack({
+      delta:1
     })
   }
 })

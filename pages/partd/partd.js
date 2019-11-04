@@ -14,14 +14,14 @@ Page({
   },
 
   next: function (e) {
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/parte/parte',
     })
   },
 
   previous: function (e) {
-    wx.reLaunch({
-      url: '/pages/partc/partc',
+    wx.navigateBack({
+      delta:1
     })
   },
 

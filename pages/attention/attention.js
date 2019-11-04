@@ -6,7 +6,7 @@ Page({
     data:{ 
     },
     next:function(){
-      wx.reLaunch({
+      wx.navigateTo({
           url: '/pages/viptype/viptype',
         })
     }

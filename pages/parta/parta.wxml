@@ -5,7 +5,7 @@
   <view class="main title">
   <text>PartA 个人基本信息</text>
   </view>
-  <view class="main table">
+  <form class="main table" bindsubmit="next">
     <view class="table_tr">
       <view class="tr_key" >{{table_values[0].name}}</view>
       <view class="tr_value">
@@ -19,15 +19,15 @@
           </view>
         </view>
       </view>
-    </view>
-    <view class="table_tr">
+    </view> 
+    <view class="table_tr" >
       <view class="tr_key">{{table_values[1].name}}</view>
       <view class="tr_value">
         <view class="sblock">
-          <input class="write"  placeholder="姓"></input>
+          <input class="write"  placeholder="姓" name="cn_surname"> </input>
         </view>
         <view class="sblock">
-          <input class="write" placeholder="名"></input>
+          <input class="write" placeholder="名" name="cn_name"></input>
         </view>
       </view>
     </view>
@@ -35,18 +35,18 @@
       <view class="tr_key">{{table_values[2].name}}</view>
       <view class="tr_value">
          <view class="sblock">
-          <input class="write"  placeholder="First Name"></input>
+          <input class="write"  placeholder="First Name" name="en_surname"></input>
         </view>
         <view class="sblock">
-          <input class="write" placeholder="Other Name"></input>
+          <input class="write" placeholder="Other Name" name="en_name"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
       <view class="tr_key">{{table_values[3].name}}</view>
       <view class="tr_value">
-        <radio-group>
-          <radio value="male">男</radio>
+        <radio-group bindchange="genderChoose">
+          <radio value="male" >男</radio>
           <radio value="female">女</radio>
         </radio-group>
       </view>
@@ -55,7 +55,7 @@
       <view class="tr_key">{{table_values[4].name}}</view>
       <view class="tr_value">
          <view class="mblock">
-          <input class="write"  placeholder="HKID"></input>
+          <input class="write"  placeholder="HKID" name="hkid"></input>
          </view>
          <button type="primary" style="height:80%;font-size:25rpx">拍照</button>
       </view>
@@ -64,7 +64,7 @@
       <view class="tr_key">{{table_values[5].name}}</view>
       <view class="tr_value">
         <view class="lblock">
-          <input class="write"  placeholder="邮箱"></input>
+          <input class="write"  placeholder="邮箱" name="email"></input>
          </view>
       </view>
     </view>
@@ -72,13 +72,13 @@
       <view class="tr_key">{{table_values[6].name}}</view>
       <view class="tr_value">
         <view class="ssblock">
-          <input class="write"  placeholder="年"></input>
+          <input class="write"  placeholder="年" name="year"></input>
         </view>
         <view class="ssblock">
-          <input class="write"  placeholder="月"></input>
+          <input class="write"  placeholder="月" name="month"></input>
         </view>
         <view class="ssblock">
-          <input class="write"  placeholder="日"></input>
+          <input class="write"  placeholder="日" name="day"></input>
         </view>
       </view>
     </view>
@@ -86,7 +86,7 @@
       <view class="tr_key">{{table_values[7].name}}</view>
       <view class="tr_value">
         <view class="lblock">
-          <input class="write"  placeholder="电话号码"></input>
+          <input class="write"  placeholder="电话号码" name="phone"></input>
         </view>
       </view>
     </view>
@@ -94,22 +94,20 @@
       <view class="tr_key">{{table_values[8].name}}</view>
       <view class="tr_value">
         <view class="ssblock">
-          <input class="write"  placeholder="区"></input>
+          <input class="write"  placeholder="区" name="district"></input>
         </view>
         <view class="ssblock">
-          <input class="write"  placeholder="街"></input>
+          <input class="write"  placeholder="街" name="street"></input>
         </view>
         <view class="ssblock">
-          <input class="write"  placeholder="楼"></input>
+          <input class="write"  placeholder="楼" name="building"></input>
         </view>
           <view class="ssblock">
-          <input class="write"  placeholder="门牌"></input>
+          <input class="write"  placeholder="门牌" name="door"></input>
         </view>
       </view>
     </view>
-  </view>
-  <view class="main buttons">
-  <button type="primary" bindtap="previous">上一步</button>
-  <button type="primary" bindtap="next">下一步</button>
-  </view>
+    <button type="primary" bindtap="previous">上一步</button>
+    <button type="primary" form-type="submit">下一步</button>
+  </form>
 </view>

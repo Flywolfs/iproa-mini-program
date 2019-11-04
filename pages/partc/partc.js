@@ -49,14 +49,14 @@ Page({
   },
 
   next:function(e){
-      wx.reLaunch({
+      wx.navigateTo({
               url: '/pages/partd/partd',
     })
   },
 
   previous: function (e) {
-    wx.reLaunch({
-      url: '/pages/partb/partb',
+    wx.navigateBack({
+      delta:1
     })
   },
 

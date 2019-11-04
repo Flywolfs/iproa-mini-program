@@ -66,8 +66,8 @@ Page({
   },
 
   previous: function (e) {
-    wx.reLaunch({
-      url: '/pages/partd/partd',
+    wx.navigateBack({
+      delta:1
     })
   },
 
