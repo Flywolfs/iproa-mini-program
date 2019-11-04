@@ -7,7 +7,7 @@
   </view>
   <view class="main table">
     <!-- <view bindchange="radioChange"> -->
-    <view class='list_item' wx:for="{{radioValues}}" data-index="{{index}}" bindtap='radioChange' style="{{index == radioValues.length-1?'border-bottom:0':''}}">
+    <view class='list_item' wx:for="{{radioValues}}" wx:key="type" data-index="{{index}}" bindtap='radioChange' style="{{index == radioValues.length-1?'border-bottom:0':''}}">
     <view wx:if="{{item.selected}}" class='item'>
     <view style='width:20rpx;height:20rpx;background-color:rgb(144,144,144);border-radius:100%;'></view>
     </view> 

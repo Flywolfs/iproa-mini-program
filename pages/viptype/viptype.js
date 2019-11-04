@@ -11,7 +11,7 @@ Page({
 
   onReady: function (options) {
     var storage = wx.getStorageSync('radioValues') || [];
-    if (storage != []){
+    if (storage.length!=0){
         // this.data.radioValues = storage;
         this.setData({
           radioValues : storage
