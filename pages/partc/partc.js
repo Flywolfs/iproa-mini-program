@@ -5,30 +5,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-    table_values:[
-      {"name":"总工作年期"},
-      {"name":"工作日期"},
-      {"name":"公司名称"},
-      {"name":"职位"},
-      {"name":"主要职责"}
-    ],
-    records:[],
+      //TODO 这个要改成界面可显示变化
+    selected_values:{
+      working_range: "",
+      records: [],
+    },
     selectData: ['2-5年', '6-10年', '10年以上']
   },
 
+  onReady: function (options) {
+    var storage = wx.getStorageSync('partc') || [];
+    if (storage.length != 0) {
+      this.setData({
+        selected_values: storage
+      })
+    }
+  },
+
   insert: function () {
-    var rc = this.data.records;
-    console.log(rc);
-    rc.push(this.data.records.length);
+    var rc = this.data.selected_values.records;
+    rc.push({"start_date":"","end_date":"","company":"","occupation":"","role":"","prof_path":""});
     this.setData({
-      records: rc
+      'selected_values.records': rc
     });
   },
 
   delBind: function () {
-    var rc = this.data.records;
+    var rc = this.data.records; 
     console.log(rc);
-    rc.pop(this.data.records.length);
+    rc.pop();
     this.setData({
       records: rc
     });
@@ -46,11 +51,29 @@ Page({
       index: index,
       selectShow: !this.data.selectShow
     });
+    this.data.selected_values.working_range = this.data.selectData[index]
   },
 
   next:function(e){
-      wx.navigateTo({
-              url: '/pages/partd/partd',
+    var selected = e.detail.value;
+    for (var i = 0; i < this.data.selected_values.records.length; i++){
+        for(var item in selected){
+          if ("start_date"+i == item){
+            this.data.selected_values.records[i]["start_date"] = selected[item]
+          } else if ("end_date"+i == item){
+            this.data.selected_values.records[i]["end_date"] = selected[item]
+          } else if ("company" + i == item) {
+            this.data.selected_values.records[i]["company"] = selected[item]
+          } else if ("occupation" + i == item) {
+            this.data.selected_values.records[i]["occupation"] = selected[item]
+          } else if ("role" + i == item) {
+            this.data.selected_values.records[i]["role"] = selected[item]
+          }
+        }
+    };
+    wx.setStorageSync('partc', this.data.selected_values);
+    wx.navigateTo({
+            url: '/pages/partd/partd',
     })
   },
 
@@ -64,13 +87,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
   },
 

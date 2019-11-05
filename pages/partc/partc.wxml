@@ -1,5 +1,5 @@
 <!--pages/partc/partc.wxml-->
-<view class="wrapper"> 
+<view class="wrapper">  
         <view class="main progess">
                 <progress percent="64" stroke-width="12"/>
         </view>
@@ -10,9 +10,9 @@
                 <view class="add_del_button" bindtap="insert">增加</view>
                 <view class="add_del_button" bindtap="delBind">删除</view>
         </view>
-        <view class="main title">
+        <view class="main title"> 
                 <view class="table_tr">
-                        <view class="tr_key" >{{table_values[0].name}}</view>
+                        <view class="tr_key" >总工作年期</view>
                         <view class="tr_value">
                                 <view class="select_box">
                                         <view class="select" catchtap='selectTap'>
@@ -26,42 +26,42 @@
                         </view>
                 </view>
         </view>
-        <view class="main table">
-                <view wx:for="{{records}}" class="working_block">
+        <form class="main table" bindsubmit="next">
+                <view wx:for="{{selected_values.records}}" class="working_block">
                         <view class="table_tr">
-                                <view class="tr_key">{{table_values[1].name}}</view>
+                                <view class="tr_key">工作日期</view>
                                 <view class="tr_value">
-                                        <view class="ssblock"><input class="write"  placeholder="开始时间"></input> </view>
+                                        <view class="ssblock"><input class="write"  placeholder="开始时间" name="start_date{{index}}" value="{{item.start_date}}"></input> </view>
                                         To
-                                        <view class="ssblock"><input class="write"  placeholder="结束时间"></input> </view>
+                                        <view class="ssblock"><input class="write"  placeholder="结束时间" name="end_date{{index}}" value="{{item.end_date}}"></input> </view>
                                 </view>
                         </view>
                         <view class="table_tr">
-                                <view class="tr_key">{{table_values[2].name}}</view>
+                                <view class="tr_key">公司名称</view>
                                 <view class="tr_value">
-                                        <view class="lblock"><input class="write"  placeholder="公司名称"></input> </view>
+                                        <view class="lblock"><input class="write"  placeholder="公司名称" name="company{{index}}" value="{{item.company}}"></input> </view>
                                 </view>
                         </view>
                         <view class="table_tr">
-                                <view class="tr_key">{{table_values[3].name}}</view>
+                                <view class="tr_key">职位</view>
                                 <view class="tr_value">
-                                        <view class="lblock"><input class="write"  placeholder="职位"></input> </view>
+                                        <view class="lblock"><input class="write"  placeholder="职位" name="occupation{{index}}" value="{{item.occupation}}"></input> </view>
                                 </view>
                         </view>
                         <view class="table_tr">
-                                <view class="tr_key">{{table_values[4].name}}</view>
+                                <view class="tr_key">主要职责</view>
                                 <view class="tr_value">
-                                        <view class="lblock"><input class="write"  placeholder="主要职责"></input> </view>
+                                        <view class="lblock"><input class="write"  placeholder="主要职责" name="role{{index}}" value="{{item.role}}"></input> </view>
                                 </view>
                         </view>
                         <view class="table_tr">
                                  <button>上传工作证明</button>
                         </view>
                 </view>
-        </view>
-        <view class="main buttons">
-                <button type="primary" bindtap="previous">上一步</button>
-                <button type="primary" bindtap="next">下一步</button>
-        </view>
+                <view class="main buttons">
+                        <button type="primary" bindtap="previous">上一步</button>
+                        <button type="primary" form-type="submit">下一步</button>
+                </view>
+        </form>
 </view> 
  

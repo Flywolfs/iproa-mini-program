@@ -1,19 +1,38 @@
 // pages/partd/partd.js
-Page({
+Page({ 
 
   /**
    * 页面的初始数据
    */
   data: {
-    table_values:[
-      {"name":"推荐人1姓名"},
-      {"name":"推荐人1会员ID"},
-      { "name": "推荐人2姓名" },
-      { "name": "推荐人2会员ID" },
-    ]
+    selected_values: {
+          "first_surname":"",
+          "first_other_name":"",
+          "first_id":"",
+          "sec_surname":"",
+          "sec_other_name":"",
+          "sec_id":""
+    }
   },
 
+  onReady: function () {
+    var storage = wx.getStorageSync('partd') || [];
+    if (storage.length != 0) {
+      this.setData({
+        selected_values: storage
+      })
+    }
+  },  
+
+
   next: function (e) {
+    this.data.selected_values["first_surname"] = e.detail.value.first_surname;
+    this.data.selected_values["first_other_name"] = e.detail.value.first_other_name;
+    this.data.selected_values["first_id"] = e.detail.value.first_id;
+    this.data.selected_values["sec_surname"] = e.detail.value.sec_surname;
+    this.data.selected_values["sec_other_name"] = e.detail.value.sec_other_name;
+    this.data.selected_values["sec_id"] = e.detail.value.sec_id;
+    wx.setStorageSync('partd', this.data.selected_values);
     wx.navigateTo({
       url: '/pages/parte/parte',
     })
@@ -29,13 +48,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
   },
 

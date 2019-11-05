@@ -2,17 +2,6 @@ const app = getApp()
 Page({
   data:{
     selectShow: false,
-    table_values:[
-      {"name":"头衔"},
-      { "name": "中文名" },
-      { "name": "英文名" },
-      { "name": "性别" },
-      { "name": "HKID" },
-      { "name": "邮箱" },
-      { "name": "生日" },
-      { "name": "电话号码" },
-      { "name": "地址" }
-    ],
     selected_values:{
       "title":"",
       "cn_surname":"",
@@ -81,7 +70,6 @@ Page({
     this.data.selected_values["door"] = e.detail.value.door;
     //TODO 需要加入字段检测
     wx.setStorageSync('parta', this.data.selected_values);
-    //字典值清空还是上面的赋值有问题？
     wx.navigateTo({
       url: '/pages/partb/partb',
     })
