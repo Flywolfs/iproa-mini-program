@@ -16,7 +16,7 @@
          </view>
         <view class="main buttons">
           <button type="primary" bindtap="previous">上一步</button>
-          <button type="primary" bindtap="next">确认提交</button>
+          <button type="primary" bindtap="confirm">确认提交</button>
         </view>
 </view> 
  

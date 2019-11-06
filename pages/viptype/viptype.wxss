@@ -21,9 +21,10 @@ page{
 }
 
 .title{
-  height: 100rpx;
+  height: 50rpx;
   background-color:white;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .table{
@@ -51,6 +52,7 @@ color: rgb(79,79,79);
 padding: 28rpx 0;
 border-bottom:1px solid rgb(209,209,209); 
 }
+
 .item{
 width: 28rpx;
 height: 28rpx;

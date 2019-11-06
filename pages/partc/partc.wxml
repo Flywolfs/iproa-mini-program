@@ -1,5 +1,5 @@
 <!--pages/partc/partc.wxml-->
-<view class="wrapper">  
+<view class="wrapper"> 
         <view class="main progess">
                 <progress percent="64" stroke-width="12"/>
         </view>
@@ -10,6 +10,7 @@
                 <view class="add_del_button" bindtap="insert">增加</view>
                 <view class="add_del_button" bindtap="delBind">删除</view>
         </view>
+        
         <view class="main title"> 
                 <view class="table_tr">
                         <view class="tr_key" >总工作年期</view>

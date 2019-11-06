@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-      //TODO 这个要改成界面可显示变化
+      //TODO 这个要改成界面可显示变化 
     selected_values:{
       working_range: "",
       records: [],
@@ -31,11 +31,11 @@ Page({
   },
 
   delBind: function () {
-    var rc = this.data.records; 
+    var rc = this.data.selected_values.records; 
     console.log(rc);
     rc.pop();
     this.setData({
-      records: rc
+      'selected_values.records': rc
     });
   },
 

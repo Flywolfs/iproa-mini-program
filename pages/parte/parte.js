@@ -71,6 +71,29 @@ Page({
     })
   },
 
+  confirm:function(e) {
+      var viptype = wx.getStorageSync('radioValues') || [];
+      var parta = wx.getStorageSync('parta') || [];
+      var partb = wx.getStorageSync('partb') || [];
+      var partc = wx.getStorageSync('partc') || [];
+      var partd = wx.getStorageSync('partd') || [];
+      var parte = wx.getStorageSync('parte') || [];
+      var request_paras = {"viptype":viptype,"parta":parta,"partb":partb,"partc":partc,"partd":partd,"parte":parte};
+      wx.request({
+        url: 'http://127.0.0.1:8001/application/confirm/',
+        method:"POST",
+        data:{
+          "request_paras": request_paras
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+          console.log(res.data)
+        }
+      })
+  },
+
   /**
    * 页面的初始数据
    */

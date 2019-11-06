@@ -57,7 +57,7 @@
          <view class="mblock">
           <input class="write"  placeholder="HKID" name="hkid" value="{{selected_values['hkid']}}"></input>
          </view>
-         <button type="primary" style="height:80%;font-size:25rpx">拍照</button>
+         <button type="primary" style="height:80%;font-size:25rpx" bindtap="photo">拍照</button>
       </view>
     </view>
     <view class="table_tr">

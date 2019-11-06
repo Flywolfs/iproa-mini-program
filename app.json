@@ -8,8 +8,10 @@
     "pages/partb/partb",
     "pages/partc/partc",
     "pages/partd/partd",
-    "pages/parte/parte",  
-    "pages/logs/logs"
+    "pages/parte/parte",
+    "pages/logs/logs",
+    "pages/finish/finish",
+    "pages/payment/payment"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -18,29 +20,29 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
-    "tabBar": {
-      "color": "#a9b7b7",
-      "selectedColor": "#1296db",
-      "borderStyle": "black",
-      "list": [
-        {
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "list": [
+      {
         "selectedIconPath": "images/tabbar/home_start.png",
         "iconPath": "images/tabbar/home_end.png",
         "pagePath": "pages/index/index",
         "text": "首页"
-        },
-        {
-          "selectedIconPath": "images/tabbar/write_start.png",
-          "iconPath": "images/tabbar/write_end.png",
-          "pagePath": "pages/attention/attention",
-          "text": "申请填写"
-        },
-        {
-          "selectedIconPath": "images/tabbar/user_start.png",
-          "iconPath": "images/tabbar/user_end.png",
-          "pagePath": "pages/myapply/myapply",
-          "text": "我的申请"
-        }
-      ]
-    }
+      },
+      {
+        "selectedIconPath": "images/tabbar/write_start.png",
+        "iconPath": "images/tabbar/write_end.png",
+        "pagePath": "pages/attention/attention",
+        "text": "申请填写"
+      },
+      {
+        "selectedIconPath": "images/tabbar/user_start.png",
+        "iconPath": "images/tabbar/user_end.png",
+        "pagePath": "pages/myapply/myapply",
+        "text": "我的申请"
+      }
+    ]
+  }
 }

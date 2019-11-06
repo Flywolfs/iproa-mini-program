@@ -21,10 +21,11 @@ progress{
 }
 
 .add_del{
-  height: 100rpx;
+  height: 120rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .add_del_button{
@@ -40,12 +41,13 @@ progress{
   height: 100rpx;
   background-color:white;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .table{
   background-color:white;
-  align-items: center;
   text-align: center;
+  height:2500rpx;
 }
 
 .working_block{

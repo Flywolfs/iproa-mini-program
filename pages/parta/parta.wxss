@@ -21,9 +21,10 @@ progress{
 }
 
 .title{
-  height: 100rpx;
+  height: 50rpx;
   background-color:white;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .table{
