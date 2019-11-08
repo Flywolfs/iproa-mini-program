@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Application(models.Model):
-    sessionid = models.IntegerField(max_length=8,primary_key=True)
+    sessionid = models.IntegerField(primary_key=True)
     wechatid = models.CharField(max_length=128)
     vip_type = models.CharField(max_length=128)
     title = models.CharField(max_length=16)
@@ -33,7 +33,7 @@ class EduExp(models.Model):
 class ProfExp(models.Model):
     prof_org = models.CharField(max_length=64)
     prof_name = models.CharField(max_length=64)
-    prof_date = models.DateField()
+    prof_date = models.CharField(max_length=32)
     prof_path = models.CharField(max_length=128)
     application = models.ForeignKey(Application, on_delete=models.CASCADE)
 
