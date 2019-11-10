@@ -91,14 +91,29 @@ def gen_prof_exps(apply_params,application):
 
 
 def gen_working_exp(apply_params,application):
-    working_records = apply_params['request_paras']['partc']['records']
-    for record in working_records:
-
-    pass
+    exps = apply_params['request_paras']['partc']['records']
+    if len(exps) != 0:
+        for exp in exps:
+            start_date = date(exp['start_year'],exp['start_month'],exp['start_day'])
+            end_date = date(exp['end_year'],exp['end_month'],exp['end_day'])
+            company = exp['company']
+            occupation = exp['occupation']
+            role = exp['role']
+            WorkingExp(from_date=start_date,to_date=end_date,company=company,occupation=occupation,role=role).save()
 
 def gen_recommander_exp(apply_params,application):
-
-    pass
+    first_surname= apply_params['request_paras']['partd']['first_surname']
+    first_name = apply_params['request_paras']['partd']['first_other_name']
+    first_id = apply_params['request_paras']['partd']['first_id']
+    second_surname = apply_params['request_paras']['partd']['sec_surname']
+    second_name = apply_params['request_paras']['partd']['sec_other_name']
+    second_id = apply_params['request_paras']['partd']['sec_id']
+    if first_surname != "":
+        rec_one = Recommander(surname=first_surname,othername=first_name,vipid=first_id)
+        rec_one.save()
+    if second_surname != "":
+        rec_two = Recommander(surname=second_surname,othername=second_name,vipid=second_id)
+        rec_two.save()
 
 def confirm_viptype(viptypes):
     for viptype in viptypes:
