@@ -79,6 +79,7 @@ Page({
       var partd = wx.getStorageSync('partd') || [];
       var parte = wx.getStorageSync('parte') || [];
       var request_paras = {"viptype":viptype,"parta":parta,"partb":partb,"partc":partc,"partd":partd,"parte":parte};
+      console.log(request_paras);
       wx.request({
         url: 'http://127.0.0.1:8001/application/confirm/',
         method:"POST",

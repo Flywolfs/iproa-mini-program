@@ -64,6 +64,7 @@ Page({
     this.data.selected_values["doby"] = e.detail.value.year;
     this.data.selected_values["dobm"] = e.detail.value.month;
     this.data.selected_values["dobd"] = e.detail.value.day;
+    this.data.selected_values["phone"] = e.detail.value.phone;
     this.data.selected_values["district"] = e.detail.value.district;
     this.data.selected_values["street"] = e.detail.value.street;
     this.data.selected_values["building"] = e.detail.value.building;

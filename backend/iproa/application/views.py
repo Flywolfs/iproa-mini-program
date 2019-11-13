@@ -27,8 +27,8 @@ def confirm_application(request):
         hkid = apply_params['request_paras']['parta']['hkid']
         hkid_path = apply_params['request_paras']['parta']['hkid_path']
         email = apply_params['request_paras']['parta']['email']
-        dob = date(apply_params['request_paras']['parta']["doby"],apply_params['request_paras']['parta']["dobm"],
-                   apply_params['request_paras']['parta']["dobd"])
+        dob = date(int(apply_params['request_paras']['parta']["doby"]),int(apply_params['request_paras']['parta']["dobm"]),
+                   int(apply_params['request_paras']['parta']["dobd"]))
         phone = apply_params['request_paras']['parta']['phone']
         address = apply_params['request_paras']['parta']['district']+'-'+apply_params['request_paras']['parta']['street']+"-"+\
                   apply_params['request_paras']['parta']['building']+"-"+apply_params['request_paras']['parta']['door']
@@ -60,25 +60,32 @@ def received_signature():
 
 def gen_edu_exps(apply_params,application):
     first_edu_org = apply_params['request_paras']['partb']['first_edu_org']
-    first_grad_date = date(apply_params['request_paras']['partb']['first_edu_year'],apply_params['request_paras']['partb']['first_edu_moh'],
-                     apply_params['request_paras']['partb']['first_edu_day'])
-    first_edu_prof = apply_params['request_paras']['partb']['first_edu_prof']
-    second_edu_org = apply_params['request_paras']['partb']['first_edu_org']
-    second_grad_date = date(apply_params['request_paras']['partb']['first_edu_year'],apply_params['request_paras']['partb']['first_edu_moh'],
-                     apply_params['request_paras']['partb']['first_edu_day'])
-    second_edu_prof = apply_params['request_paras']['partb']['first_edu_prof']
-    edu_one = EduExp(edu_org=first_edu_org,grad_date=first_grad_date,edu_maj=first_edu_prof,application=application)
-    edu_one.save()
-    edu_two = EduExp(edu_org=second_edu_org,grad_date=second_grad_date,edu_maj=second_edu_prof,application=application)
-    edu_two.save()
+    if first_edu_org != "":
+        first_grad_date = date(int(apply_params['request_paras']['partb']['first_edu_year']),
+                               int(apply_params['request_paras']['partb']['first_edu_month']),
+                               int(apply_params['request_paras']['partb']['first_edu_day']))
+        first_edu_prof = apply_params['request_paras']['partb']['first_edu_prof']
+        edu_one = EduExp(edu_org=first_edu_org, grad_date=first_grad_date, edu_maj=first_edu_prof,
+                         application=application)
+        edu_one.save()
+
+    second_edu_org = apply_params['request_paras']['partb']['sec_edu_org']
+    if second_edu_org != "":
+        second_grad_date = date(int(apply_params['request_paras']['partb']['sec_edu_year']),
+                                int(apply_params['request_paras']['partb']['sec_edu_month']),
+                                int(apply_params['request_paras']['partb']['sec_edu_day']))
+        second_edu_prof = apply_params['request_paras']['partb']['sec_edu_prof']
+        edu_two = EduExp(edu_org=second_edu_org, grad_date=second_grad_date, edu_maj=second_edu_prof,
+                         application=application)
+        edu_two.save()
 
 def gen_prof_exps(apply_params,application):
     first_prof_org = apply_params['request_paras']['partb']['first_prof_org']
     first_prof_name = apply_params['request_paras']['partb']['first_prof_name']
     first_prof_date = apply_params['request_paras']['partb']['first_prof_date']
-    second_prof_org = apply_params['request_paras']['partb']['second_prof_org']
-    second_prof_name = apply_params['request_paras']['partb']['second_prof_name']
-    second_prof_date = apply_params['request_paras']['partb']['second_prof_date']
+    second_prof_org = apply_params['request_paras']['partb']['sec_prof_org']
+    second_prof_name = apply_params['request_paras']['partb']['sec_prof_name']
+    second_prof_date = apply_params['request_paras']['partb']['sec_prof_date']
     # prof is not required
     if first_prof_org != "":
         prof_one = ProfExp(prof_org=first_prof_org,prof_name=first_prof_name,prof_date=first_prof_date,
@@ -94,12 +101,12 @@ def gen_working_exp(apply_params,application):
     exps = apply_params['request_paras']['partc']['records']
     if len(exps) != 0:
         for exp in exps:
-            start_date = date(exp['start_year'],exp['start_month'],exp['start_day'])
-            end_date = date(exp['end_year'],exp['end_month'],exp['end_day'])
+            start_date = date(int(exp['start_year']),int(exp['start_month']),int(exp['start_day']))
+            end_date = date(int(exp['end_year']),int(exp['end_month']),int(exp['end_day']))
             company = exp['company']
             occupation = exp['occupation']
             role = exp['role']
-            WorkingExp(from_date=start_date,to_date=end_date,company=company,occupation=occupation,role=role).save()
+            WorkingExp(from_date=start_date,to_date=end_date,company=company,occupation=occupation,role=role,application=application).save()
 
 def gen_recommander_exp(apply_params,application):
     first_surname= apply_params['request_paras']['partd']['first_surname']
@@ -109,10 +116,10 @@ def gen_recommander_exp(apply_params,application):
     second_name = apply_params['request_paras']['partd']['sec_other_name']
     second_id = apply_params['request_paras']['partd']['sec_id']
     if first_surname != "":
-        rec_one = Recommander(surname=first_surname,othername=first_name,vipid=first_id)
+        rec_one = Recommander(surname=first_surname,othername=first_name,vipid=first_id,application=application)
         rec_one.save()
     if second_surname != "":
-        rec_two = Recommander(surname=second_surname,othername=second_name,vipid=second_id)
+        rec_two = Recommander(surname=second_surname,othername=second_name,vipid=second_id,application=application)
         rec_two.save()
 
 def confirm_viptype(viptypes):
