@@ -1,10 +1,12 @@
-<!-- attention.wxml -->
+<!-- attention.wxml --> 
 <view class="wrapper">
   <view class="main title">
-    <view class="titleItem">注意事项</view>
-    <view class="titleItem">仅适用于香港永久居民</view>
+    <view class="titleItem">注意事項</view>
   </view>
   <view class="main table">
+    <view class="attention">
+      <view class="at_cell">*僅適用於香港永久居民</view>
+    </view>
     <view class="trh">
       <view class="tdh">学历</view>
       <view class="tdh">CS/CE/EE/ICT相关经验</view>
