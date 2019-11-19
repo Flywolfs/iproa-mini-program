@@ -24,7 +24,7 @@ Page({
 
   insert: function () {
     var rc = this.data.selected_values.records;
-    rc.push({"start_date":"","end_date":"","company":"","occupation":"","role":"","prof_path":""});
+    rc.push({ "start_year": "", "start_month": "", "start_day": "", "end_year": "", "end_month": "", "end_day": "","company":"","occupation":"","role":"","prof_path":""});
     this.setData({
       'selected_values.records': rc
     });
@@ -58,10 +58,18 @@ Page({
     var selected = e.detail.value;
     for (var i = 0; i < this.data.selected_values.records.length; i++){
         for(var item in selected){
-          if ("start_date"+i == item){
-            this.data.selected_values.records[i]["start_date"] = selected[item]
-          } else if ("end_date"+i == item){
-            this.data.selected_values.records[i]["end_date"] = selected[item]
+          if ("start_year"+i == item){
+            this.data.selected_values.records[i]["start_year"] = selected[item]
+          } else if("start_month"+i == item){
+            this.data.selected_values.records[i]["start_month"] = selected[item]
+          } else if ("start_day" + i == item) {
+            this.data.selected_values.records[i]["start_day"] = selected[item]
+          } else if ("end_year"+i == item){
+            this.data.selected_values.records[i]["end_year"] = selected[item]
+          } else if ("end_month" + i == item) {
+            this.data.selected_values.records[i]["end_month"] = selected[item]
+          } else if ("end_day" + i == item) {
+            this.data.selected_values.records[i]["end_day"] = selected[item]
           } else if ("company" + i == item) {
             this.data.selected_values.records[i]["company"] = selected[item]
           } else if ("occupation" + i == item) {

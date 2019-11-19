@@ -37,7 +37,7 @@ progress{
   display: flex;
   flex-direction: row;
   height: 10%;
-}
+} 
 
 .tr_key{
  width: 20%;

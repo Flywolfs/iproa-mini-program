@@ -26,20 +26,20 @@
     "borderStyle": "black",
     "list": [
       {
-        "selectedIconPath": "images/tabbar/home_start.png",
-        "iconPath": "images/tabbar/home_end.png",
+        "selectedIconPath": "images/icons/shouye-icon-select.png",
+        "iconPath": "images/icons/shouye-icon.png",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
-        "selectedIconPath": "images/tabbar/write_start.png",
-        "iconPath": "images/tabbar/write_end.png",
+        "selectedIconPath": "images/icons/shenqing-icon-select.png",
+        "iconPath": "images/icons/shenqing-icon.png",
         "pagePath": "pages/attention/attention",
         "text": "申请填写"
       },
       {
-        "selectedIconPath": "images/tabbar/user_start.png",
-        "iconPath": "images/tabbar/user_end.png",
+        "selectedIconPath": "images/icons/wode-icon-select.png",
+        "iconPath": "images/icons/wode-icon.png",
         "pagePath": "pages/myapply/myapply",
         "text": "我的申请"
       }

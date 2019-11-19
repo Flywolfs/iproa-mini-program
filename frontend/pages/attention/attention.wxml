@@ -1,25 +1,37 @@
-<!-- attention.wxml -->
+<!-- attention.wxml --> 
 <view class="wrapper">
   <view class="main title">
-    <view class="titleItem">注意事项</view>
-    <view class="titleItem">仅适用于香港永久居民</view>
+    <view class="titleItem">注意事項</view>
   </view>
   <view class="main table">
+    <view class="attention">
+      <view class="at_cell">*僅適用於香港永久居民</view>
+      <view class="at_cell"></view>
+    </view>
     <view class="trh">
-      <view class="tdh">学历</view>
-      <view class="tdh">CS/CE/EE/ICT相关经验</view>
+      <view class="tdh">學歷</view>
+      <view class="tdh">CS/CE/EE/ICT相關經驗</view>
     </view>
     <view class="trb ">
-      <view class="tdb">相关大学学位或专业资格</view>
+      <view class="tdb">相關大學學位或專業資格</view>
       <view class="tdb">2年</view>
     </view>
     <view class="trb ">
-      <view class="tdb">ICT高级文凭、副学士</view>
+      <view class="tdb">ICT高級文憑、副學士</view>
       <view class="tdb">6年</view>
     </view>
+
+    <radio-group class="selections">
+        <radio class="selection_button" bindtap="change_color" >
+          是，我符合上述申請條件。
+        </radio>
+        <radio  class="selection_button">
+          否，我不符合上述申請條件。
+        </radio>
+   </radio-group> 
   </view>
   <view class="main apply">
-    <button type="primary" bindtap="next">继续申请</button>
+    <button class="button" bindtap="next">繼續申請</button>
   </view>
 </view>
 

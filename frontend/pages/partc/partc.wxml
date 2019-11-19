@@ -30,11 +30,19 @@
         <form class="main table" bindsubmit="next">
                 <view wx:for="{{selected_values.records}}" class="working_block">
                         <view class="table_tr">
-                                <view class="tr_key">工作日期</view>
+                                <view class="tr_key">工作开始日期</view>
                                 <view class="tr_value">
-                                        <view class="ssblock"><input class="write"  placeholder="开始时间" name="start_date{{index}}" value="{{item.start_date}}"></input> </view>
-                                        To
-                                        <view class="ssblock"><input class="write"  placeholder="结束时间" name="end_date{{index}}" value="{{item.end_date}}"></input> </view>
+                                        <view class="ssblock"><input class="write"  placeholder="年" name="start_year{{index}}" value="{{item.start_year}}"></input> </view>
+                                        <view class="ssblock"><input class="write"  placeholder="月" name="start_month{{index}}" value="{{item.start_month}}"></input> </view>
+                                        <view class="ssblock"><input class="write"  placeholder="日" name="start_day{{index}}" value="{{item.start_day}}"></input> </view>
+                                </view>
+                        </view>
+                        <view class="table_tr">
+                                <view class="tr_key">工作结束日期</view>
+                                <view class="tr_value">
+                                        <view class="ssblock"><input class="write"  placeholder="年" name="end_year{{index}}" value="{{item.end_year}}"></input> </view>
+                                        <view class="ssblock"><input class="write"  placeholder="月" name="end_month{{index}}" value="{{item.end_month}}"></input> </view>
+                                        <view class="ssblock"><input class="write"  placeholder="日" name="end_day{{index}}" value="{{item.end_day}}"></input> </view>
                                 </view>
                         </view>
                         <view class="table_tr">

@@ -8,7 +8,7 @@ Page({
     "first_edu_level": "",
     "first_edu_org": "",
     "first_edu_year": "",
-    "first_edu_month": "",
+    "first_edu_month": "", 
     "first_edu_day": "",
     "first_edu_prof": "",
     "first_edu_cert_path": "",

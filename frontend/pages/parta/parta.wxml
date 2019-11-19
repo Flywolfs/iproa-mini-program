@@ -46,8 +46,8 @@
       <view class="tr_key">性别</view>
       <view class="tr_value">
         <radio-group bindchange="genderChoose">
-          <radio value="male">男</radio>
-          <radio value="female">女</radio>
+          <radio value="male" checked="{{selected_values['gender']=='male'}}">男</radio>
+          <radio value="female" checked="{{selected_values['gender']=='female'}}">女</radio>
         </radio-group>
       </view>
     </view>
