@@ -1,9 +1,9 @@
-<view class="wrapper"> 
-  <view class="main progess">
-   <progress percent="32" stroke-width="12"/>
-  </view>
+<view class="wrapper">  
   <view class="main title">
-  <text>PartA 个人基本信息</text>
+    <view class="titleItem">PartA 个人基本信息</view>
+  </view>
+  <view class="progress">
+    <image src="/images/timeline/step2.png"></image>
   </view>
   <form class="main table" bindsubmit="next">
     <view class="table_tr">

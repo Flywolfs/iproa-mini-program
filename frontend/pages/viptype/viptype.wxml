@@ -1,7 +1,7 @@
 <view class="wrapper">
   <view class="main progress">
     <progress percent="16" stroke-width="12"/>
-  </view> 
+  </view>  
   <view class="main title">
       <text>选择会员类别</text>
   </view>
