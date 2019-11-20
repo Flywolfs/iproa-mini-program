@@ -1,0 +1,67 @@
+<!--pages/apply/apply.wxml-->
+<!-- attenion -->
+<view class="wrapper" style="display:{{attention}}">  
+  <view class="main title">
+    <view class="titleItem">注意事項</view>
+  </view>
+  <view class="main table">
+    <view class="attention">
+      <view class="at_cell">*僅適用於香港永久居民</view>
+      <view class="at_cell"></view>
+    </view> 
+    <view class="trh">
+      <view class="tdh">學歷</view>
+      <view class="tdh">CS/CE/EE/ICT相關經驗</view>
+    </view>
+    <view class="trb ">
+      <view class="tdb">相關大學學位或專業資格</view>
+      <view class="tdb">2年</view>
+    </view>
+    <view class="trb ">
+      <view class="tdb">ICT高級文憑、副學士</view>
+      <view class="tdb">6年</view>
+    </view>
+
+    <radio-group class="selections">
+        <radio class="selection_button" bindtap="change_color" >
+          是，我符合上述申請條件。
+        </radio>
+        <radio  class="selection_button">
+          否，我不符合上述申請條件。
+        </radio>
+   </radio-group> 
+  </view>
+  <view class="main apply">
+    <button class="button" bindtap="attention_next">繼續申請</button>
+  </view>
+</view> 
+<!-- viptype -->
+<view class="wrapper" style="display:{{viptype}}">
+  <view class="main progress">
+    <progress percent="16" stroke-width="12"/>
+  </view>  
+  <view class="main title">
+      <text>选择会员类别</text>
+  </view>
+  <view class="main table">
+    <!-- <view bindchange="radioChange"> -->
+    <view class='list_item' wx:for="{{radioValues}}" wx:key="type" data-index="{{index}}" bindtap='radioChange' style="{{index == radioValues.length-1?'border-bottom:0':''}}">
+    <view wx:if="{{item.selected}}" class='item'>
+    <view style='width:20rpx;height:20rpx;background-color:rgb(144,144,144);border-radius:100%;'></view>
+    </view> 
+    <view wx:else class='item'></view> 
+    <text style='color:rgb(96,96,96)'>{{item.type}}</text>
+    <text style='color:rgb(96,96,96)'>{{item.price}}</text>
+    </view>
+    <!-- </view> -->
+</view>
+  <view class="main buttons">
+  <button type="primary" bindtap="previous">上一步</button>
+  <button type="primary" bindtap="next">下一步</button>
+  </view>
+</view>
+<!-- parta -->
+<!-- partb -->
+<!-- partc -->
+<!-- partd -->
+<!-- parte -->

@@ -11,7 +11,8 @@
     "pages/parte/parte",
     "pages/logs/logs",
     "pages/finish/finish",
-    "pages/payment/payment"
+    "pages/payment/payment",
+    "pages/apply/apply"
   ],
   "window": {
     "backgroundTextStyle": "light",

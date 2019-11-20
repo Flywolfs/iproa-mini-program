@@ -54,7 +54,7 @@ Page({
     this.data.selected_values["gender"]=e.detail.value;
   },
 
-  next:function(e){
+  parta_next:function(e){
     this.data.selected_values["cn_surname"] = e.detail.value.cn_surname;
     this.data.selected_values["cn_name"] = e.detail.value.cn_name;
     this.data.selected_values["en_surname"] = e.detail.value.en_surname;
@@ -76,7 +76,7 @@ Page({
     })
   },
 
-  previous: function (e) {
+  parta_previous: function (e) {
     wx.navigateBack({
       delta:1
     })

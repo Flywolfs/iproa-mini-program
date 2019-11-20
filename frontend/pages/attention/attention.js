@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
     data:{ 
+      attention:"true"
     },
     next:function(){
       wx.navigateTo({

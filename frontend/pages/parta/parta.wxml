@@ -1,11 +1,11 @@
 <view class="wrapper">  
+  <view class="main progress">
+    <image src="/images/timeline/step2.png" mode="widthFix"></image>
+  </view>
   <view class="main title">
-    <view class="titleItem">PartA 个人基本信息</view>
+    <text>PartA 个人基本信息</text>
   </view>
-  <view class="progress">
-    <image src="/images/timeline/step2.png"></image>
-  </view>
-  <form class="main table" bindsubmit="next">
+  <form class="main md_table" bindsubmit="next">
     <view class="table_tr">
       <view class="tr_key" >头衔</view>
       <view class="tr_value">
@@ -107,9 +107,9 @@
         </view>
       </view>
     </view>
-    <view class="main buttons">
-      <button type="primary" bindtap="previous">上一步</button>
-      <button type="primary" form-type="submit">下一步</button>
+    <view class="main button_area">
+      <button class="md_button" bindtap="parta_previous">上一步</button>
+      <button class="md_button" form-type="parta_submit">下一步</button>
     </view>
   </form>
 </view>

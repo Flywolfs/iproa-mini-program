@@ -36,13 +36,13 @@ Page({
       radioValues: arr
     })
   },
-  next:function(e){
+  viptype_next:function(e){
     wx.navigateTo({
       url: '/pages/parta/parta',
     })
   },
 
-  previous:function(e){
+  viptype_previous:function(e){
     wx.setStorage({
       key: "type",
       data: '',

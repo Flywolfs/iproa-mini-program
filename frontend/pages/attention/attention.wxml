@@ -1,9 +1,10 @@
 <!-- attention.wxml --> 
-<view class="wrapper">  
+<!-- attenion -->
+<view class="wrapper" style="display:{{attention}}">  
   <view class="main title">
     <view class="titleItem">注意事項</view>
   </view>
-  <view class="main table">
+  <view class="main sm_table">
     <view class="attention">
       <view class="at_cell">*僅適用於香港永久居民</view>
       <view class="at_cell"></view>
@@ -30,8 +31,10 @@
         </radio>
    </radio-group> 
   </view>
-  <view class="main apply">
-    <button class="button" bindtap="next">繼續申請</button>
+  <view class="main button_area">
+    <button class="bg_button" bindtap="next">繼續申請</button>
   </view>
-</view>
+</view> 
+<!-- viptype -->
+<!-- <view class="wrapper" style="display:{{viptype}}">ddd</view> -->
 
