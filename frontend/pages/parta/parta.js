@@ -2,6 +2,7 @@ const app = getApp()
 Page({
   data:{
     selectShow: false,
+    selectShow_gender:false,
     selected_values:{
       "title":"",
       "cn_surname":"",
@@ -23,7 +24,9 @@ Page({
   },
 
     index: 0,
-    selectData :['先生','女士','小姐','博士']
+    index_gender:0,
+    selectData :['先生','女士','小姐','博士'],
+    gender:['男','女']
   },
 
   onReady: function (options){
@@ -36,9 +39,15 @@ Page({
   },
 
   selectTap() {
-  this.setData({
-    selectShow: !this.data.selectShow
-  });
+    this.setData({
+      selectShow: !this.data.selectShow
+    });
+  },
+
+  selectTap_gender(){
+    this.setData({
+      selectShow_gender: !this.data.selectShow_gender
+    });
   },
 
   optionTap(e) {
@@ -50,11 +59,20 @@ Page({
     this.data.selected_values["title"] = this.data.selectData[index]
   },
 
+  optionTap_gender(e){
+    let index_gender = e.currentTarget.dataset.index;//获取点击的下拉列表的下标
+    this.setData({
+      index_gender: index_gender,
+      selectShow_gender: !this.data.selectShow_gender
+    });
+    this.data.selected_values["gender"] = this.data.gender[index_gender]
+  },
+
   genderChoose:function(e){ 
     this.data.selected_values["gender"]=e.detail.value;
   },
 
-  parta_next:function(e){
+  next:function(e){
     this.data.selected_values["cn_surname"] = e.detail.value.cn_surname;
     this.data.selected_values["cn_name"] = e.detail.value.cn_name;
     this.data.selected_values["en_surname"] = e.detail.value.en_surname;

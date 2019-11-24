@@ -1,24 +1,28 @@
-<view class="wrapper">
+<view class="wrapper"> 
+  <view class="main head"></view>
+  <view class="main title">
+      <text>選擇會員類別</text>
+  </view>
   <view class="main progress">
     <image src="/images/timeline/step1.png" mode="widthFix"></image>
-  </view>   
-  <view class="main title">
-      <text>选择会员类别</text>
-  </view>
+  </view>    
   <view class="main sm_table">
     <!-- <view bindchange="radioChange"> -->
-    <view class='list_item' wx:for="{{radioValues}}" wx:key="type" data-index="{{index}}" bindtap='radioChange' style="{{index == radioValues.length-1?'border-bottom:0':''}}">
-    <view wx:if="{{item.selected}}" class='item'>
-    <view style='width:20rpx;height:20rpx;background-color:rgb(144,144,144);border-radius:100%;'></view>
-    </view> 
-    <view wx:else class='item'></view> 
-    <text style='color:rgb(96,96,96)'>{{item.type}}</text>
-    <text style='color:rgb(96,96,96)'>{{item.price}}</text>
-    </view>
-    <!-- </view> -->
+    <radio-group class="selections">
+      <view class="selection" wx:for="{{radioValues}}" wx:key="type" data-index="{{index}}">
+        <view class="selection_button">
+          <radio bindtap="select_type">
+          </radio>
+        </view>
+        <view class="type_descs">
+          <view class="type_desc">{{item.type}}</view>
+          <view class="type_desc">{{item.price}}</view>
+        </view>
+      </view>
+    </radio-group>
   </view>
   <view class="main button_area">
-  <button class="md_button" bindtap="viptype_previous">上一步</button>
-  <button class="md_button" bindtap="viptype_next">下一步</button>
+    <button class="md_button" bindtap="viptype_previous">上一步</button>
+    <button class="md_button" bindtap="viptype_next">下一步       </button>
   </view>
 </view>

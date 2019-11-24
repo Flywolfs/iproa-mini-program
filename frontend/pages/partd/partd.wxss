@@ -1,6 +1,4 @@
-page{ 
-  height: 100%;
-}
+@import "../page.wxss"; 
 
 .main{
   width: 800rpx;
@@ -14,46 +12,49 @@ page{
   height: 100%
 }
 
-progress{
+.progress{
   height: 100rpx;
   background-color:white;
   text-align: center;
 }
 
-.add_del{
-  height: 100rpx;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.add_del_button{
-   border-radius: 8rpx;
-   border: 1rpx solid #777777;
-   margin: 0 5%;
-   width: 40%;
-   height:80rpx;
-   text-align: center;
+.head{
+  width: 100%;
+  height: 5%;
+  color: rgba(255, 255, 255, 0);
 }
 
 .title{
-  height: 50rpx;
-  background-color:white;
+  display: flex;
+  flex-direction: column;
+  height: 8%;
+  background-color: rgba(255, 255, 255, 0);
   text-align: center;
-  flex-shrink: 0;
-}
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: large;
+  align-content: center;
+  justify-content: center;
+} 
 
 .table{
   background-color:white;
-  align-items: center;
   text-align: center;
+  height:2500rpx;
+}
+
+.working_years{
+  background-color:white;
+  text-align: center;
+  height: 100rpx;
 }
 
 .working_block{
-  background-color:rgb(229, 231, 231);
-  height: 500rpx;
+  background-color:rgb(255, 255, 255);
+  height: 600rpx;
   width: 90%;
   margin: 5% 5%;
+  border-bottom: 5rpx solid rgb(234, 234, 234);
 }
 
 .table_tr{
@@ -63,13 +64,13 @@ progress{
 }
 
 .tr_key{
- width:30%;
+ width: 35%;
  text-align: left;
- font-size:35rpx;
- margin: 0 5%;
-  display: flex;
-  align-items: center;
-  justify-content: left;
+ margin: 0 0 0 5%;
+ display: flex;
+ align-items: center;
+ justify-content: left;
+ font-size: small;
 }
 
 .tr_value{
@@ -86,38 +87,61 @@ progress{
   height: 100%
 }
 
-.ssblock{
-  width:40%;
-  height: 80%;
-   border-radius: 8rpx;
-   border: 1rpx solid #777777;
+.picture{
+  display: flex;
+  background-color: rgb(239,247,253);
+  align-items: center;
+  justify-content: center;
 }
 
-.sblock{
-  width: 50%;
+.ssblock{
+  width:23%;
   height: 80%;
-   border-radius: 8rpx;
-   border: 1rpx solid #777777;
+  border-radius: 8rpx;
+  border: 1rpx solid rgb(234, 234, 234);
+  margin-right: 2%;
+  font-size: small
 }
 
 .mblock{
-  width: 75%;
+  width: 48%;
   height: 80%;
-   border-radius: 8rpx;
-   border: 1rpx solid #777777;
+  border-radius: 8rpx;
+  border: 1rpx solid rgb(234, 234, 234);
+  margin-right: 2%;
+  font-size: small
+}
+
+.sblock{
+  width:32%;
+  height: 80%;
+  border-radius: 8rpx;
+  border: 1rpx solid rgb(234, 234, 234); 
+  margin-right: 2%;
+  font-size: small
 }
 
 .lblock{
+  width: 75%;
+  height: 80%;
+  border-radius: 8rpx;
+  border: 1rpx solid rgb(234, 234, 234);
+  font-size: small
+}
+
+.xlblock{
   width: 100%;
   height: 80%;
    border-radius: 8rpx;
-   border: 1rpx solid #777777;
+   border: 1rpx solid rgb(234, 234, 234);
+   font-size: small
 }
 
 .select_box{
   width: 90%;
-  border-radius: 10rpx;
+  border-radius: 5rpx;
   position: relative;
+  z-index: 99;
 }
 
 .select{
@@ -126,15 +150,15 @@ progress{
   box-sizing: border-box;
   border-radius: 8rpx;
   align-items: center;
-  border: 1rpx solid #777777;
+  border: 1rpx solid rgb(234, 234, 234);
 }
 
 .select_text{
-  font-size: 40rpx;
-  color: #777777;
-  width: 70%;
+  font-size: small;
+  color: rgb(128,128,128);
+  width: 85%;
   border-width: 2rpx;
-  border-color: gray;
+  border-color: rgb(234, 234, 234);
 }
 
 .select_img{
@@ -170,10 +194,19 @@ progress{
   padding: 10rpx;
 }
 
-.buttons{
-  height: 100rpx;
+.button_area{
+  height: 300rpx;
   background-color:white;
   text-align: center;
   display: flex;
   flex-direction: row;
+}
+
+.md_button{
+  background-color: rgb(99, 165, 242);
+  width: 30%;
+  height: 30%;
+  color: white;
+  top: 30rpx;
+  font-size: medium;
 }

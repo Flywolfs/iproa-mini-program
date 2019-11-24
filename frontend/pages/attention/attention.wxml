@@ -1,6 +1,7 @@
 <!-- attention.wxml --> 
-<!-- attenion -->
+<!-- attenion --> 
 <view class="wrapper" style="display:{{attention}}">  
+  <view class="main head"></view>
   <view class="main title">
     <view class="titleItem">注意事項</view>
   </view>
@@ -30,7 +31,7 @@
           否，我不符合上述申請條件。
         </radio>
    </radio-group> 
-  </view>
+  </view> 
   <view class="main button_area">
     <button class="bg_button" bindtap="next">繼續申請</button>
   </view>

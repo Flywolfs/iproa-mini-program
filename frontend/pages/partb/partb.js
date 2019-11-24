@@ -3,7 +3,7 @@ Page({
   data: {
     selectShow: false, 
     index: 0,
-    selectData: ['副学士','学士','硕士','博士'],
+    selectData: ['副學士','學士','碩士','博士'],
     selected_values: {
     "first_edu_level": "",
     "first_edu_org": "",

@@ -1,115 +1,130 @@
-<view class="wrapper">  
+<view class="wrapper">
+  <view class="main head"></view>
+  <view class="main title">
+    <text>PartA</text>
+    <text>個人基本信息</text>
+  </view> 
   <view class="main progress">
     <image src="/images/timeline/step2.png" mode="widthFix"></image>
   </view>
-  <view class="main title">
-    <text>PartA 个人基本信息</text>
-  </view>
-  <form class="main md_table" bindsubmit="next">
-    <view class="table_tr">
-      <view class="tr_key" >头衔</view>
-      <view class="tr_value">
-        <view class="select_box">
-          <view class="select" catchtap='selectTap'>
-            <text class="select_text">{{selectData[index]}}</text>
-            <image class='select_img {{selectShow&&"select_img_rotate"}}'  src="/images/parta/down.png" ></image>
+  <view class="main md_table">
+    <form bindsubmit="next">
+      <view class="table_tr">
+        <view class="tr_key" >頭銜:</view>
+        <view class="tr_value">
+          <view class="select_box">
+            <view class="select" catchtap='selectTap'>
+              <text class="select_text">{{selectData[index]}}</text>
+              <image class='select_img {{selectShow&&"select_img_rotate"}}'  src="/images/parta/down.png" ></image>
+            </view>
+            <view class='option_box' style='height:{{selectShow?(selectData.length>5?325:selectData.length*50):0}}rpx;'>
+                <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+            </view>
           </view>
-          <view class='option_box' style='height:{{selectShow?(selectData.length>5?325:selectData.length*50):0}}rpx;'>
-              <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+        </view>
+      </view> 
+      <view class="table_tr" >
+        <view class="tr_key">中文名:</view>
+        <view class="tr_value">
+          <view class="mblock">
+            <input class="write"  placeholder="性" name="cn_surname" value="{{selected_values['cn_surname']}}"></input>
+          </view>
+          <view class="mblock">
+            <input class="write" placeholder="名" name="cn_name" value="{{selected_values['cn_name']}}"></input>
           </view>
         </view>
       </view>
-    </view> 
-    <view class="table_tr" >
-      <view class="tr_key">中文名</view>
-      <view class="tr_value">
-        <view class="sblock">
-          <input class="write"  placeholder="姓" name="cn_surname" value="{{selected_values['cn_surname']}}"></input>
-        </view>
-        <view class="sblock">
-          <input class="write" placeholder="名" name="cn_name" value="{{selected_values['cn_name']}}"></input>
-        </view>
-      </view>
-    </view>
-    <view class="table_tr">
-      <view class="tr_key">英文名</view>
-      <view class="tr_value">
-         <view class="sblock">
-          <input class="write"  placeholder="Surname" name="en_surname" value="{{selected_values['en_surname']}}"></input>
-        </view>
-        <view class="sblock">
-          <input class="write" placeholder="Other Name" name="en_name" value="{{selected_values['en_name']}}"></input>
+      <view class="table_tr">
+        <view class="tr_key">英文名:</view>
+        <view class="tr_value">
+          <view class="mblock">
+            <input class="write"  placeholder="Surname" name="en_surname" value="{{selected_values['en_surname']}}"></input>
+          </view>
+          <view class="mblock">
+            <input class="write" placeholder="Other Name" name="en_name" value="{{selected_values['en_name']}}"></input>
+          </view>
         </view>
       </view>
-    </view>
-    <view class="table_tr">
-      <view class="tr_key">性别</view>
-      <view class="tr_value">
-        <radio-group bindchange="genderChoose">
-          <radio value="male" checked="{{selected_values['gender']=='male'}}">男</radio>
-          <radio value="female" checked="{{selected_values['gender']=='female'}}">女</radio>
-        </radio-group>
-      </view>
-    </view>
-    <view class="table_tr">
-      <view class="tr_key">HKID</view>
-      <view class="tr_value">
-         <view class="mblock">
-          <input class="write"  placeholder="HKID" name="hkid" value="{{selected_values['hkid']}}"></input>
-         </view>
-         <button type="primary" style="height:80%;font-size:25rpx" bindtap="photo">拍照</button>
-      </view>
-    </view>
-    <view class="table_tr">
-      <view class="tr_key">邮箱</view>
-      <view class="tr_value">
-        <view class="lblock">
-          <input class="write"  placeholder="邮箱" name="email" value="{{selected_values['email']}}"></input>
-         </view>
-      </view>
-    </view>
-    <view class="table_tr">
-      <view class="tr_key">生日</view>
-      <view class="tr_value">
-        <view class="ssblock">
-          <input class="write"  placeholder="年" name="year" value="{{selected_values['doby']}}"></input>
+      <view class="table_tr">
+        <view class="tr_key">性別:</view>
+        <view class="tr_value">
+          <view class="select_box">
+            <view class="select" catchtap='selectTap_gender'>
+              <text class="select_text">{{gender[index_gender]}}</text>
+              <image class='select_img {{selectShow_gender&&"select_img_rotate"}}'  src="/images/parta/down.png" ></image>
+            </view>
+            <view class='option_box' style='height:{{selectShow_gender?(gender.length>5?325:gender.length*50):0}}rpx;'>
+                <text class='option' wx:for='{{gender}}' wx:key='this' data-index='{{index}}' catchtap='optionTap_gender'>{{item}}</text>
+            </view>
+          </view>
         </view>
-        <view class="ssblock">
-          <input class="write"  placeholder="月" name="month" value="{{selected_values['dobm']}}"></input>
-        </view>
-        <view class="ssblock">
-          <input class="write"  placeholder="日" name="day" value="{{selected_values['dobd']}}"></input>
+        <!-- <view class="tr_value">
+          <radio-group bindchange="genderChoose">
+            <radio value="male" checked="{{selected_values['gender']=='male'}}">男</radio>
+            <radio value="female" checked="{{selected_values['gender']=='female'}}">女</radio>
+          </radio-group>
+        </view> -->
+      </view>
+      <view class="table_tr">
+        <view class="tr_key">HKID:</view>
+        <view class="tr_value">
+          <view class="lblock">
+            <input class="write"  placeholder="HKID" name="hkid" value="{{selected_values['hkid']}}"></input>
+          </view>
+          <button style="height:80%;font-size:25rpx;background-color: rgb(99, 165, 242);color:white;font-size=large" bindtap="photo" >拍照</button>
         </view>
       </view>
-    </view>
-    <view class="table_tr">
-      <view class="tr_key">电话号码</view>
-      <view class="tr_value">
-        <view class="lblock">
-          <input class="write"  placeholder="电话号码" name="phone" value="{{selected_values['phone']}}"></input>
+      <view class="table_tr">
+        <view class="tr_key">郵箱:</view>
+        <view class="tr_value">
+          <view class="xlblock">
+            <input class="write"  placeholder="郵箱" name="email" value="{{selected_values['email']}}"></input>
+          </view>
         </view>
       </view>
-    </view>
-    <view class="table_tr">
-      <view class="tr_key">地址</view>
-      <view class="tr_value">
-        <view class="ssblock">
-          <input class="write"  placeholder="区" name="district" value="{{selected_values['district']}}"></input>
+      <view class="table_tr">
+        <view class="tr_key">生日:</view>
+        <view class="tr_value">
+          <view class="sblock">
+            <input class="write"  placeholder="年" name="year" value="{{selected_values['doby']}}"></input>
+          </view>
+          <view class="sblock">
+            <input class="write"  placeholder="月" name="month" value="{{selected_values['dobm']}}"></input>
+          </view>
+          <view class="sblock">
+            <input class="write"  placeholder="日" name="day" value="{{selected_values['dobd']}}"></input>
+          </view>
         </view>
-        <view class="ssblock">
-          <input class="write"  placeholder="街" name="street" value="{{selected_values['street']}}"></input>
+      </view>
+      <view class="table_tr">
+        <view class="tr_key">電話號碼:</view>
+        <view class="tr_value">
+          <view class="xlblock">
+            <input class="write"  placeholder="電話號碼" name="phone" value="{{selected_values['phone']}}"></input>
+          </view>
         </view>
-        <view class="ssblock">
-          <input class="write"  placeholder="楼" name="building" value="{{selected_values['building']}}"></input>
-        </view>
+      </view>
+      <view class="table_tr">
+        <view class="tr_key">地址:</view>
+        <view class="tr_value">
           <view class="ssblock">
-          <input class="write"  placeholder="门牌" name="door" value="{{selected_values['door']}}"></input>
+            <input class="write"  placeholder="區" name="district" value="{{selected_values['district']}}"></input>
+          </view>
+          <view class="ssblock">
+            <input class="write"  placeholder="街" name="street" value="{{selected_values['street']}}"></input>
+          </view>
+          <view class="ssblock">
+            <input class="write"  placeholder="樓" name="building" value="{{selected_values['building']}}"></input>
+          </view>
+            <view class="ssblock">
+            <input class="write"  placeholder="門牌" name="door" value="{{selected_values['door']}}"></input>
+          </view>
         </view>
       </view>
-    </view>
-    <view class="main button_area">
-      <button class="md_button" bindtap="parta_previous">上一步</button>
-      <button class="md_button" form-type="parta_submit">下一步</button>
-    </view>
-  </form>
+      <view class="main button_area">
+        <button class="md_button" bindtap="parta_previous">上一步</button>
+        <button class="md_button" form-type="submit">下一步</button>
+      </view>
+    </form>
+  </view>
 </view>

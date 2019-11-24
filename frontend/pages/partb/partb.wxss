@@ -1,6 +1,4 @@
-page{
-  height: 100%;
-}
+@import "../page.wxss"; 
 
 .main{
   width: 800rpx;
@@ -14,21 +12,32 @@ page{
   height: 100%
 }
 
-progress{
+.progress{
   height: 100rpx;
   background-color:white;
   text-align: center;
 }
 
-.title{
-  height: 50rpx;
-  background-color:white;
-  text-align: center;
-  flex-shrink: 0;
+.head{
+  width: 100%;
+  height: 5%;
+  color: rgba(255, 255, 255, 0);
 }
 
+.title{
+  display: flex;
+  flex-direction: column;
+  height: 8%;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: large;
+  align-content: center;
+  justify-content: center;
+} 
+
 .table{
-  height:2500rpx;
   background-color:white;
   text-align: center;
 }
@@ -40,20 +49,22 @@ progress{
 }
 
 .tr_key{
- width:30%;
+ width: 35%;
  text-align: left;
- font-size: 28rpx;
- margin: 0 5%;
-  display: flex;
-  align-items: center;
+ margin: 0 0 0 5%;
+ display: flex;
+ align-items: center;
+ justify-content: left;
+ font-size: small;
 }
 
 .tr_value{
-  width: 50%;
+  width: 55%;
   text-align: center;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: left;
 }
 
 .write{
@@ -61,37 +72,66 @@ progress{
   height: 100%
 }
 
-.ssblock{
-  width:25%;
-  height: 80%;
-   border-radius: 8rpx;
-   border: 1rpx solid #777777;
+.blue{
+  width:5%;
+  height: 45%;
+  background-color: rgb(110, 160, 211);
+  margin-right: 2%
 }
 
-.sblock{
-  width: 50%;
+.ssblock{
+  width:23%;
   height: 80%;
-   border-radius: 8rpx;
-   border: 1rpx solid #777777;
+  border-radius: 8rpx;
+  border: 1rpx solid rgb(234, 234, 234);
+  margin-right: 2%;
+  font-size: small
 }
 
 .mblock{
-  width: 75%;
+  width: 48%;
   height: 80%;
-   border-radius: 8rpx;
-   border: 1rpx solid #777777;
+  border-radius: 8rpx;
+  border: 1rpx solid rgb(234, 234, 234);
+  margin-right: 2%;
+  font-size: small
+}
+
+.sblock{
+  width:32%;
+  height: 80%;
+  border-radius: 8rpx;
+  border: 1rpx solid rgb(234, 234, 234); 
+  margin-right: 2%;
+  font-size: small
 }
 
 .lblock{
+  width: 75%;
+  height: 80%;
+  border-radius: 8rpx;
+  border: 1rpx solid rgb(234, 234, 234);
+  font-size: small
+}
+
+.xlblock{
   width: 100%;
   height: 80%;
    border-radius: 8rpx;
-   border: 1rpx solid #777777;
+   border: 1rpx solid rgb(234, 234, 234);
+   font-size: small
+}
+
+.picture{
+  display: flex;
+  background-color: rgb(239,247,253);
+  align-items: center;
+  justify-content: center;
 }
 
 .select_box{
-  width: 90%;
-  border-radius: 10rpx;
+  width: 100%;
+  border-radius: 5rpx;
   position: relative;
   z-index: 99;
 }
@@ -102,15 +142,15 @@ progress{
   box-sizing: border-box;
   border-radius: 8rpx;
   align-items: center;
-  border: 1rpx solid #777777;
+  border: 1rpx solid rgb(234, 234, 234);
 }
 
 .select_text{
-  font-size: 40rpx;
-  color: #777777;
-  width: 70%;
+  font-size: small;
+  color: rgb(128,128,128);
+  width: 85%;
   border-width: 2rpx;
-  border-color: gray;
+  border-color: rgb(234, 234, 234);
 }
 
 .select_img{
@@ -131,25 +171,45 @@ progress{
   box-sizing: border-box;
   height: 0;
   overflow-y: auto;
-  background: #fff;
+  background:rgb(255, 255, 255);
   transition: height 0.3s;
-  border-left:1px solid #efefef;
-  border-right:1px solid #efefef;
+  border-left:1px solid rgb(234, 234, 234);
+  border-right:1px solid rgb(234, 234, 234);
 }
 
 .select_box .option_box .option{
   display: block;
   line-height: 30rpx; 
   font-size: 35rpx;
-  border-top: 1px solid #efefef;
-  border-bottom: 1px solid #efefef;
+  border-top: 1px solid rgb(234, 234, 234);
+  border-bottom: 1px solid rgb(234, 234, 234);
+  z-index: 2;
   padding: 10rpx;
 }
 
-.buttons{
-  height: 100rpx;
+.attention{
+  display: flex;
+  height: 5%;
+  color: red;
+  font-size: x-small;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.button_area{
+  height: 300rpx;
   background-color:white;
   text-align: center;
   display: flex;
   flex-direction: row;
+}
+
+.md_button{
+  background-color: rgb(99, 165, 242);
+  width: 30%;
+  height: 30%;
+  color: white;
+  top: 30rpx;
+  font-size: medium;
 }

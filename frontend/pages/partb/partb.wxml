@@ -1,18 +1,21 @@
-<view class="wrapper"> 
-  <view class="main progess">
-   <progress percent="48" stroke-width="12"/>
-  </view>
+<view class="wrapper">  
+  <view class="main head">nothing</view>
   <view class="main title">
-  <text>PartB 个人教育信息</text>
+    <text>PartB</text>
+    <text>個人教育信息</text>
   </view>
-  <form class="main table" bindsubmit="next"> 
+  <view class="main progress">
+    <image src="/images/timeline/step3.png" mode="widthFix"></image>
+  </view>
+  <view class="main table">
+  <form bindsubmit="next"> 
     <view class="table_tr">
-     <view class="tr_value">
-      <view class="sblock">文凭</view>
-      </view>
+     <view class="tr_key">
+      <view class="blue"></view>文憑
+     </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key" >最高教育水平</view>
+      <view class="tr_key" >最高教育水平:</view>
       <view class="tr_value">
         <view class="select_box">
           <view class="select" catchtap='selectTap'>
@@ -26,136 +29,157 @@
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">最高教育院校1</view>
+      <view class="tr_key">最高教育院校1:</view>
       <view class="tr_value">
-        <view class="lblock">
+        <view class="xlblock">
          <input class="write"  placeholder="院校1"  name="first_edu_org" value="{{selected_values['first_edu_org']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">最高教育毕业时间1</view>
+      <view class="tr_key">最高教育畢業時間1:</view>
       <view class="tr_value">
-      <view class="ssblock">
+      <view class="sblock">
          <input class="write"  placeholder="年" name="first_edu_year" value="{{selected_values['first_edu_year']}}"></input>
       </view>
-      <view class="ssblock">
+      <view class="sblock">
          <input class="write"  placeholder="月"  name="first_edu_month" value="{{selected_values['first_edu_month']}}"></input>
       </view>
-      <view class="ssblock">
+      <view class="sblock">
          <input class="write"  placeholder="日" name="first_edu_day" value="{{selected_values['first_edu_day']}}"></input>
       </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">最高教育专业1</view>
+      <view class="tr_key">最高教育專業1:</view>
       <view class="tr_value">
-        <view class="lblock">
-         <input class="write"  placeholder="专业1" name="first_edu_prof" value="{{selected_values['first_edu_prof']}}"></input>
+        <view class="xlblock">
+         <input class="write"  placeholder="專業1" name="first_edu_prof" value="{{selected_values['first_edu_prof']}}"></input>
       </view>
     </view>
     </view>
      <view class="table_tr">
-      <button>上传文凭1照片</button>
+      <view class="tr_key"></view>
+      <view class="tr_value">
+        <view class="xlblock picture" bindtap="">
+          上傳文憑1照片
+        </view>
+      </view>
      </view>
     <view class="table_tr">
-      <view class="tr_key">最高教育院校2*</view>
+      <view class="tr_key">最高教育院校2*:</view>
       <view class="tr_value">
-         <view class="lblock">
+         <view class="xlblock">
          <input class="write"  placeholder="院校2" name="sec_edu_org" value="{{selected_values['sec_edu_org']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">最高教育毕业时间2*</view>
+      <view class="tr_key">最高畢業時間2*:</view>
       <view class="tr_value">
-      <view class="ssblock">
+      <view class="sblock">
          <input class="write"  placeholder="年" name="sec_edu_year" value="{{selected_values['sec_edu_year']}}"></input>
       </view>
-      <view class="ssblock">
+      <view class="sblock">
          <input class="write"  placeholder="月" name="sec_edu_month" value="{{selected_values['sec_edu_month']}}"></input>
       </view>
-      <view class="ssblock">
+      <view class="sblock">
          <input class="write"  placeholder="日" name="sec_edu_day" value="{{selected_values['sec_edu_day']}}"></input>
       </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">最高教育专业2*</view>
+      <view class="tr_key">最高教育專業2*:</view>
       <view class="tr_value">
-       <view class="lblock">
-         <input class="write"  placeholder="专业2" name="sec_edu_prof" value="{{selected_values['sec_edu_prof']}}"></input>
+       <view class="xlblock">
+         <input class="write"  placeholder="專業2" name="sec_edu_prof" value="{{selected_values['sec_edu_prof']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <button>上传文凭２照片</button>
-     </view>
-    <view class="table_tr">
+      <view class="tr_key"></view>
       <view class="tr_value">
-      <view class="sblock">专业证书*</view>
+        <view class="xlblock picture" bindtap="">
+          上傳文憑2照片*
+        </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">授权机构1*</view>
+     <view class="tr_key">
+      <view class="blue"></view>專業證書
+     </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key">授權機構1*:</view>
       <view class="tr_value">
-        <view class="lblock">
+        <view class="xlblock">
          <input class="write"  placeholder="授权机构1" name="first_prof_org" value="{{selected_values['first_prof_org']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">证书名称1*</view>
+      <view class="tr_key">證書名稱1*:</view>
       <view class="tr_value">
-        <view class="lblock">
-         <input class="write"  placeholder="证书名称1" name="first_prof_name" value="{{selected_values['first_prof_name']}}"></input>
+        <view class="xlblock">
+         <input class="write"  placeholder="證書名稱1" name="first_prof_name" value="{{selected_values['first_prof_name']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">获取日期1*</view>
+      <view class="tr_key">獲取日期1*:</view>
       <view class="tr_value">
-        <view class="lblock">
-         <input class="write"  placeholder="获取日期1" name="first_prof_date" value="{{selected_values['first_prof_date']}}"></input>
+        <view class="xlblock">
+         <input class="write"  placeholder="獲取日期1" name="first_prof_date" value="{{selected_values['first_prof_date']}}"></input>
         </view>
       </view>
     </view>
      <view class="table_tr">
-      <button>上传证书1扫描件*</button>
+      <view class="tr_key"></view>
+      <view class="tr_value">
+        <view class="xlblock picture" bindtap="">
+          上傳證書1掃描件*
+        </view>
+      </view>
      </view>
     <view class="table_tr">
-      <view class="tr_key">授权机构2*</view>
+      <view class="tr_key">授權機構2*:</view>
       <view class="tr_value">
-        <view class="lblock">
-         <input class="write"  placeholder="授权机构2" name="sec_prof_org" value="{{selected_values['sec_prof_org']}}"></input>
+        <view class="xlblock">
+         <input class="write"  placeholder="授權機構2" name="sec_prof_org" value="{{selected_values['sec_prof_org']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">证书名称2*</view>
+      <view class="tr_key">證書名稱2*:</view>
       <view class="tr_value">
-        <view class="lblock">
-         <input class="write"  placeholder="证书名称2" name="sec_prof_name" value="{{selected_values['sec_prof_name']}}"></input>
+        <view class="xlblock">
+         <input class="write"  placeholder="證書名稱2" name="sec_prof_name" value="{{selected_values['sec_prof_name']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">获取日期2*</view>
+      <view class="tr_key">獲取日期2*:</view>
       <view class="tr_value">
-        <view class="lblock">
+        <view class="xlblock">
          <input class="write"  placeholder="获取日期2" name="sec_prof_date" value="{{selected_values['sec_prof_date']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <button>上传证书2扫描件*</button>
+      <view class="tr_key"></view>
+      <view class="tr_value">
+        <view class="xlblock picture" bindtap="">
+          上傳證書2掃描件*
+        </view>
+      </view>
    </view>
-    <view class="table_tr">
-        *注:上述标记*的栏目非必需
+    <view class="attention">
+        *注:上述標記*的欄目為非必須填寫項
     </view>
-     <view class="main buttons">
-        <button type="primary" bindtap="previous">上一步</button>
-        <button type="primary" form-type="submit">下一步</button>
+     <view class="main button_area">
+        <button class="md_button" bindtap="previous">上一步</button>
+        <button class="md_button" form-type="submit">下一步</button>
     </view>
   </form>
+  </view>
 </view>
