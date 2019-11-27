@@ -1,5 +1,5 @@
 <!-- attention.wxml --> 
-<!-- attenion --> 
+<!-- attenion -->  
 <view class="wrapper" style="display:{{attention}}">  
   <view class="main head"></view>
   <view class="main title">
@@ -33,9 +33,37 @@
    </radio-group> 
   </view> 
   <view class="main button_area">
-    <button class="bg_button" bindtap="next">繼續申請</button>
+    <button class="bg_button" bindtap="attention_next">繼續申請</button>
   </view>
 </view> 
 <!-- viptype -->
-<!-- <view class="wrapper" style="display:{{viptype}}">ddd</view> -->
+<view class="wrapper" style="display:{{viptype}}">  
+  <view class="main head"></view>
+  <view class="main title">
+      <text>選擇會員類別</text>
+  </view>
+  <view class="main progress">
+    <image src="/images/timeline/step1.png" mode="widthFix"></image>
+  </view>    
+  <view class="main sm_table">
+    <!-- <view bindchange="radioChange"> -->
+    <radio-group class="selections">
+      <view class="selection" wx:for="{{radioValues}}" wx:key="type" data-index="{{index}}">
+        <view class="selection_button">
+          <radio bindtap="select_type">
+          </radio>
+        </view>
+        <view class="type_descs">
+          <view class="type_desc">{{item.type}}</view>
+          <view class="type_desc">{{item.price}}</view>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+  <view class="main button_area">
+    <button class="md_button" bindtap="viptype_previous">上一步</button>
+    <button class="md_button" bindtap="viptype_next">下一步</button>
+  </view>
+</view>
+
 
