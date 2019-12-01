@@ -10,7 +10,7 @@ Page({
       working_range: "",
       records: [],
     },
-    selectData: ['2-5年', '6-10年', '10年以上']
+    year_range: ['2-5年', '6-10年', '10年以上']
   },
 
   onReady: function (options) {
@@ -39,19 +39,19 @@ Page({
     });
   },
 
-  selectTap() {
+  selectTap_year() {
     this.setData({
       selectShow: !this.data.selectShow
     });
   },
 
-  optionTap(e) {
+  optionTap_year(e) {
     let index = e.currentTarget.dataset.index;//获取点击的下拉列表的下标
     this.setData({
       index: index,
       selectShow: !this.data.selectShow
     });
-    this.data.selected_values.working_range = this.data.selectData[index]
+    this.data.selected_values.working_range = this.data.year_range[index]
   },
 
   next:function(e){

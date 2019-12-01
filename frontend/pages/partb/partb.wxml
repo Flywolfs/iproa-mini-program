@@ -1,44 +1,44 @@
-<view class="wrapper">  
-  <view class="main head">nothing</view>
-  <view class="main title">
+<view class="wrapper b_wrapper">   
+  <view class="main head"></view>
+  <view class="main title b_title">
     <text>PartB</text>
     <text>個人教育信息</text>
   </view>
   <view class="main progress">
     <image src="/images/timeline/step3.png" mode="widthFix"></image>
   </view>
-  <view class="main table">
+  <view class="main lg_table">
   <form bindsubmit="next"> 
     <view class="table_tr">
-     <view class="tr_key">
+     <view class="tr_key b_tr_key">
       <view class="blue"></view>文憑
      </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key" >最高教育水平:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key" >最高教育水平:</view>
+      <view class="tr_value b_tr_value">
         <view class="select_box">
-          <view class="select" catchtap='selectTap'>
-            <text class="select_text">{{selectData[index]}}</text>
-            <image class='select_img {{selectShow&&"select_img_rotate"}}'  src="/images/parta/down.png" ></image>
+          <view class="select" catchtap='selectTap_edu'>
+            <text class="select_text">{{edu[index]}}</text>
+            <image class='select_img {{selectShow_edu&&"select_img_rotate"}}'  src="/images/parta/down.png" ></image>
           </view>
-              <view class='option_box' style='height:{{selectShow?(selectData.length>5?325:selectData.length*50):0}}rpx;'>
-                  <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+              <view class='option_box' style='height:{{selectShow_edu?(edu.length>5?325:edu.length*50):0}}rpx;'>
+                  <text class='option' wx:for='{{edu}}' wx:key='this' data-index='{{index}}' catchtap='optionTap_edu'>{{item}}</text>
               </view>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">最高教育院校1:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key">最高教育院校1:</view>
+      <view class="tr_value b_tr_value">
         <view class="xlblock">
          <input class="write"  placeholder="院校1"  name="first_edu_org" value="{{selected_values['first_edu_org']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">最高教育畢業時間1:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key">最高教育畢業時間1:</view>
+      <view class="tr_value b_tr_value">
       <view class="sblock">
          <input class="write"  placeholder="年" name="first_edu_year" value="{{selected_values['first_edu_year']}}"></input>
       </view>
@@ -51,32 +51,32 @@
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">最高教育專業1:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key">最高教育專業1:</view>
+      <view class="tr_value b_tr_value">
         <view class="xlblock">
          <input class="write"  placeholder="專業1" name="first_edu_prof" value="{{selected_values['first_edu_prof']}}"></input>
       </view>
     </view>
     </view>
      <view class="table_tr">
-      <view class="tr_key"></view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key"></view>
+      <view class="tr_value b_tr_value">
         <view class="xlblock picture" bindtap="">
           上傳文憑1照片
         </view>
       </view>
      </view>
     <view class="table_tr">
-      <view class="tr_key">最高教育院校2*:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key">最高教育院校2*:</view>
+      <view class="tr_value b_tr_value">
          <view class="xlblock">
          <input class="write"  placeholder="院校2" name="sec_edu_org" value="{{selected_values['sec_edu_org']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">最高畢業時間2*:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key">最高畢業時間2*:</view>
+      <view class="tr_value b_tr_value">
       <view class="sblock">
          <input class="write"  placeholder="年" name="sec_edu_year" value="{{selected_values['sec_edu_year']}}"></input>
       </view>
@@ -89,85 +89,85 @@
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">最高教育專業2*:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key">最高教育專業2*:</view>
+      <view class="tr_value b_tr_value">
        <view class="xlblock">
          <input class="write"  placeholder="專業2" name="sec_edu_prof" value="{{selected_values['sec_edu_prof']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key"></view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key"></view>
+      <view class="tr_value b_tr_value">
         <view class="xlblock picture" bindtap="">
           上傳文憑2照片*
         </view>
       </view>
     </view>
     <view class="table_tr">
-     <view class="tr_key">
+     <view class="tr_key b_tr_key">
       <view class="blue"></view>專業證書
      </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">授權機構1*:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key">授權機構1*:</view>
+      <view class="tr_value b_tr_value">
         <view class="xlblock">
          <input class="write"  placeholder="授权机构1" name="first_prof_org" value="{{selected_values['first_prof_org']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">證書名稱1*:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key">證書名稱1*:</view>
+      <view class="tr_value b_tr_value">
         <view class="xlblock">
          <input class="write"  placeholder="證書名稱1" name="first_prof_name" value="{{selected_values['first_prof_name']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">獲取日期1*:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key">獲取日期1*:</view>
+      <view class="tr_value b_tr_value">
         <view class="xlblock">
          <input class="write"  placeholder="獲取日期1" name="first_prof_date" value="{{selected_values['first_prof_date']}}"></input>
         </view>
       </view>
     </view>
      <view class="table_tr">
-      <view class="tr_key"></view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key"></view>
+      <view class="tr_value b_tr_value">
         <view class="xlblock picture" bindtap="">
           上傳證書1掃描件*
         </view>
       </view>
      </view>
     <view class="table_tr">
-      <view class="tr_key">授權機構2*:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key">授權機構2*:</view>
+      <view class="tr_value b_tr_value">
         <view class="xlblock">
          <input class="write"  placeholder="授權機構2" name="sec_prof_org" value="{{selected_values['sec_prof_org']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">證書名稱2*:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key">證書名稱2*:</view>
+      <view class="tr_value b_tr_value">
         <view class="xlblock">
          <input class="write"  placeholder="證書名稱2" name="sec_prof_name" value="{{selected_values['sec_prof_name']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">獲取日期2*:</view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key">獲取日期2*:</view>
+      <view class="tr_value b_tr_value">
         <view class="xlblock">
          <input class="write"  placeholder="获取日期2" name="sec_prof_date" value="{{selected_values['sec_prof_date']}}"></input>
         </view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key"></view>
-      <view class="tr_value">
+      <view class="tr_key b_tr_key"></view>
+      <view class="tr_value b_tr_value">
         <view class="xlblock picture" bindtap="">
           上傳證書2掃描件*
         </view>

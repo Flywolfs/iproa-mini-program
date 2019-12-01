@@ -1,14 +1,14 @@
-<view class="wrapper">  
+<view class="wrapper viptype_wrapper">   
   <view class="main head"></view>
-  <view class="main title">
+  <view class="main title viptype_title">
       <text>選擇會員類別</text>
   </view>
   <view class="main progress">
     <image src="/images/timeline/step1.png" mode="widthFix"></image>
   </view>    
-  <view class="main sm_table">
+  <view class="main sm_table viptype_sm_table">
     <!-- <view bindchange="radioChange"> -->
-    <radio-group class="selections">
+    <radio-group class="selections viptype_selections">
       <view class="selection" wx:for="{{radioValues}}" wx:key="type" data-index="{{index}}">
         <view class="selection_button">
           <radio bindtap="select_type">

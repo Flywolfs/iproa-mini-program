@@ -1,0 +1,281 @@
+.wrapper{    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.main{
+  width: 100%;
+}
+
+.head{
+  width: 100%;
+  height: 70rpx;
+}
+
+.progress{
+  height: 100rpx;
+  background-color:white;
+  text-align: center;
+}
+
+.selections{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selection{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3%;
+}
+
+.sm_table{
+  height: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.md_table{
+  height:70%;
+  background-color:rgb(255, 255, 255);
+  text-align: center;
+}
+
+.lg_table{
+  height:90%;
+  background-color:rgb(255, 255, 255);
+  text-align: center;
+}
+
+.table_tr{
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+} 
+
+.tr_key{
+ text-align: left;
+ display: flex;
+ align-items: center;
+ justify-content: left;
+ font-size: small;
+}
+
+.tr_value{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+ 
+.title{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  height: 120rpx;
+}
+
+.trh{
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  justify-content: center;
+  height: 3.5rem;
+  align-items: center;
+  background-color:white;
+  align-self: center;
+}
+
+.tdh{
+    display: flex;
+    width:50%;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(238, 246, 254);
+    border:1rpx solid rgb(209, 207, 207);
+    color:rgb(99, 165, 242);
+    font-size: small;
+}
+
+.trb{
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  justify-content: center;
+  height:3rem;
+  align-items: center;
+  background-color: white;
+  align-self: center
+}
+
+.tdb{
+    width:50%;
+    height: 100%;
+    align-items:center;
+    text-align: center;
+    background-color:white;
+    border:1rpx solid rgb(209, 207, 207);
+    font-size: small;
+}
+
+.button_area{
+  display: flex;
+  height: 300rpx;
+  flex-direction: row;
+  background-color:white;
+  align-items:center;
+}
+
+.md_button{
+  background-color: rgb(99, 165, 242);
+  width: 30%;
+  height: 30%;
+  color: white;
+  font-size: medium;
+}
+
+.bg_button{
+  background-color: rgb(99, 165, 242);
+  width: 90%;
+  height: 30%;
+  color: white;
+}
+
+.ssblock{
+  width:23%;
+  height: 80%;
+  border-radius: 8rpx;
+  border: 1rpx solid rgb(234, 234, 234);
+  margin-right: 2%;
+  font-size: small
+}
+
+.mblock{
+  width: 48%;
+  height: 80%;
+  border-radius: 8rpx;
+  border: 1rpx solid rgb(234, 234, 234);
+  margin-right: 2%;
+  font-size: small
+}
+
+.sblock{
+  width:32%;
+  height: 80%;
+  border-radius: 8rpx;
+  border: 1rpx solid rgb(234, 234, 234); 
+  margin-right: 2%;
+  font-size: small
+}
+
+.lblock{
+  width: 75%;
+  height: 80%;
+  border-radius: 8rpx;
+  border: 1rpx solid rgb(234, 234, 234);
+  font-size: small
+}
+
+.xlblock{
+  width: 100%;
+  height: 80%;
+   border-radius: 8rpx;
+   border: 1rpx solid rgb(234, 234, 234);
+   font-size: small
+}
+
+.select_box{
+  width: 100%;
+  border-radius: 5rpx;
+  position: relative;
+  z-index: 99;
+}
+
+.select{
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  align-items: center;
+  border: 1rpx solid rgb(234, 234, 234);
+}
+
+.select_text{
+  font-size: small;
+  color: rgb(128,128,128);
+  width: 85%;
+  border-width: 2rpx;
+  border-color: rgb(234, 234, 234);
+}
+
+.select_img{
+  width: 70rpx;
+  height: 70rpx;
+  display: block;
+  transition:transform 0.3s;
+}
+
+.select_box .select .select_img_rotate{
+  transform:rotate(180deg); 
+}
+
+.select_box .option_box{
+  position: absolute;
+  top: calc(100% - 1px);
+  width: 100%;
+  box-sizing: border-box;
+  height: 0;
+  overflow-y: auto;
+  background:rgb(255, 255, 255);
+  transition: height 0.3s;
+  border-left:1px solid rgb(234, 234, 234);
+  border-right:1px solid rgb(234, 234, 234);
+}
+
+.select_box .option_box .option{
+  display: block;
+  line-height: 30rpx; 
+  font-size: 35rpx;
+  border-top: 1px solid rgb(234, 234, 234);
+  border-bottom: 1px solid rgb(234, 234, 234);
+  z-index: 2;
+  padding: 10rpx;
+}
+
+.write{
+  width: 100%;
+  height: 100%
+}
+
+radio .wx-radio-input{ 
+    height: 36rpx; 
+    width: 36rpx;
+    border-radius: 50%;
+    border-color: rgb(96, 147, 245);
+    background: transparent;
+ }
+
+ /* 选中后的 背景样式 */
+radio .wx-radio-input.wx-radio-input-checked{
+   border-color:rgb(99, 165, 242);
+   background-color: white
+}
+/* 选中后的 对勾样式 */
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;
+   width: 30rpx; 
+   height: 30rpx;
+   line-height: 36rpx;
+   text-align: center;
+   font-size:0rpx; 
+   background-color:rgb(99, 165, 242);
+}
+

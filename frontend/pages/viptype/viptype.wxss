@@ -1,101 +1,32 @@
 @import "../page.wxss";  
- 
-.main{
-  width: 100%;
+@import "../base.wxss";
+
+.viptype_wrapper{
+  height: 1400rpx;
 }
 
-.wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%
-}
-
-.progress{
-  height: 10%;
-  background-color:white;
+.viptype_title{
   text-align: center;
-}
-
-.head{
-  width: 100%;
-  height: 5%;
-}
- 
-.title{
-  display: flex;
-  flex-direction: column;
-  height: 12%;
-  background-color: rgba(255, 255, 255, 0);
   color: rgb(255, 255, 255);
   font-weight: 500;
-  font-size: large;
+  font-size:x-large;
+  align-content: center;
   justify-content: center;
+} 
+
+.viptype_sm_table{
+  /* justify-content: center; */
   align-items: center;
 }
 
-.sm_table{
-  height: 80%;
-  background-color:white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
- 
-.button_area{
-  height: 30%;
-  background-color:white;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-}
-
-.md_button{
-  background-color: rgb(99, 165, 242);
-  width: 30%;
-  height: 30%;
-  color: white;
-  font-size: medium;
-}
-  
-.list_item{
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin:0 25rpx;
-width:700rpx;
-font-size: 30rpx;
-color: rgb(79,79,79);
-padding: 28rpx 0;
-border-bottom:1px solid rgb(209,209,209); 
-}
-
-.item{
-width: 28rpx;
-height: 28rpx;
-border: 2px solid rgb(144,144,144);
-border-radius: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.selections{
-  display: flex;
-  flex-direction: column;
+.viptype_selections{
   width: 90%;
   height: 90%;
-  justify-content: center;
-  /* align-items: center; */
 }
 
-.selection{
+.viptype_selection{
   height: 25%;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 3%;
 }
 
 .selection_button{
@@ -121,30 +52,6 @@ justify-content: center;
   font-size: small;
   text-align: center;
   color: rgbrgb(96, 165, 242);
-}
-
-radio .wx-radio-input{ 
-    height: 36rpx; 
-    width: 36rpx;
-    border-radius: 50%;
-    border-color: rgbrgb(96, 165, 242);
-    background: transparent;
- }
-
- /* 选中后的 背景样式 */
-radio .wx-radio-input.wx-radio-input-checked{
-   border-color:rgb(99, 165, 242);
-   background-color: white
-}
-/* 选中后的 对勾样式 */
-radio .wx-radio-input.wx-radio-input-checked::before{
-   border-radius: 50%;
-   width: 30rpx; 
-   height: 30rpx;
-   line-height: 36rpx;
-   text-align: center;
-   font-size:0rpx; 
-   background-color:rgb(99, 165, 242);
 }
 
 .selection_words{

@@ -1,5 +1,5 @@
 <!--pages/parte/parte.wxml--> 
-<view class="wrapper"> 
+<view class="wrapper e_wrapper"> 
   <view class="main head">nothing</view>
   <view class="main title">
     <text>PartE</text> 
@@ -8,11 +8,11 @@
   <view class="main progress">
     <image src="/images/timeline/step6.png" mode="widthFix"></image>
   </view>  
-  <view class="main table">
+  <view class="main sm_table">
     <canvas canvas-id="signature" class="signature" disable-scroll="true" bindtouchstart="canvasStart" bindtouchmove="canvasMove" bindtouchend="canvasEnd" touchcancel="canvasEnd" binderror="canvasIdErrorCallback"></canvas>
-  </view>
-  <view class="main table_tr" bindtap="cleardraw">
-    <view class="buttons">清除簽名</view>
+    <view class="table_tr" bindtap="cleardraw">
+      <view class="clear">清除簽名</view>
+    </view>
   </view>
   <view class="main button_area">
     <button class="md_button" bindtap="previous">上一步</button>

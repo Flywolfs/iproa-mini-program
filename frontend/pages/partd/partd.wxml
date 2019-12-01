@@ -1,36 +1,36 @@
-<view class="wrapper">  
+<view class="wrapper d_wrapper"> 
   <view class="main head">nothing</view>
-  <view class="main title">
+  <view class="main title d_title">
     <text>PartD</text> 
     <text>推薦人</text>
   </view>
   <view class="main progress">
     <image src="/images/timeline/step5.png" mode="widthFix"></image>
   </view>  
-  <form class="main table" bindsubmit="next">
+  <form class="main md_table" bindsubmit="next">
     <view class="table_tr">
-      <view class="tr_key">推薦人1姓名:</view>
-      <view class="tr_value">
+      <view class="tr_key d_tr_key">推薦人1姓名:</view>
+      <view class="tr_value d_tr_value">
           <view class="mblock"><input class="write" placeholder="姓"  name="first_surname" value="{{selected_values['first_surname']}}"></input></view>
           <view class="mblock"><input class="write" placeholder="名" name="first_other_name" value="{{selected_values['first_other_name']}}"></input></view>
           </view>
       </view>
     <view class="table_tr">
-      <view class="tr_key">推薦人1會員ID:</view>
-      <view class="tr_value">
+      <view class="tr_key d_tr_key">推薦人1會員ID:</view>
+      <view class="tr_value d_tr_value">
           <view class="xlblock"><input class="write" placeholder="ID" name="first_id" value="{{selected_values['first_id']}}"></input></view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">推薦人2姓名:</view>
-      <view class="tr_value">
+      <view class="tr_key d_tr_key">推薦人2姓名:</view>
+      <view class="tr_value d_tr_value">
         <view class="mblock"><input class="write" placeholder="姓" name="sec_surname" value="{{selected_values['sec_surname']}}"></input></view>
         <view class="mblock"><input class="write" placeholder="名" name="sec_other_name" value="{{selected_values['sec_other_name']}}"></input></view>
       </view>
     </view>
     <view class="table_tr">
-      <view class="tr_key">推薦人2會員ID:</view>
-      <view class="tr_value">
+      <view class="tr_key d_tr_key">推薦人2會員ID:</view>
+      <view class="tr_value d_tr_value">
         <view class="xlblock"><input class="write" placeholder="ID" name="sec_id" value="{{selected_values['sec_id']}}"></input></view>
       </view>
     </view>

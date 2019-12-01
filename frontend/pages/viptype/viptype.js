@@ -19,7 +19,7 @@ Page({
     }
   },
 
-  radioChange: function (e) {
+  select_type: function (e) {
     var index = e.currentTarget.dataset.index;
     console.log(index);
     var arr = this.data.radioValues;

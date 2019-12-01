@@ -1,35 +1,16 @@
 @import "../page.wxss"; 
+@import "../base.wxss";
 
-.main{
-  width: 800rpx;
-}
-
-.wrapper{
-  display: flex;
+.b_wrapper{
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
   width: 100%;
-  height: 100%
+  height: 2400rpx;
 }
-
-.progress{
-  height: 100rpx;
-  background-color:white;
-  text-align: center;
-}
-
-.head{
-  width: 100%;
-  height: 5%;
-  color: rgba(255, 255, 255, 0);
-}
-
-.title{
-  display: flex;
-  flex-direction: column;
-  height: 8%;
+ 
+.b_title{
   background-color: rgba(255, 255, 255, 0);
-  text-align: center;
   color: rgb(255, 255, 255);
   font-weight: 500;
   font-size: large;
@@ -37,39 +18,13 @@
   justify-content: center;
 } 
 
-.table{
-  background-color:white;
-  text-align: center;
-}
-
-.table_tr{
-  display: flex;
-  flex-direction: row;
-  height: 100rpx;
-}
-
-.tr_key{
+.b_tr_key{
  width: 35%;
- text-align: left;
  margin: 0 0 0 5%;
- display: flex;
- align-items: center;
- justify-content: left;
- font-size: small;
 }
 
-.tr_value{
+.b_tr_value{
   width: 55%;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
-}
-
-.write{
-  width: 100%;
-  height: 100%
 }
 
 .blue{
@@ -79,112 +34,11 @@
   margin-right: 2%
 }
 
-.ssblock{
-  width:23%;
-  height: 80%;
-  border-radius: 8rpx;
-  border: 1rpx solid rgb(234, 234, 234);
-  margin-right: 2%;
-  font-size: small
-}
-
-.mblock{
-  width: 48%;
-  height: 80%;
-  border-radius: 8rpx;
-  border: 1rpx solid rgb(234, 234, 234);
-  margin-right: 2%;
-  font-size: small
-}
-
-.sblock{
-  width:32%;
-  height: 80%;
-  border-radius: 8rpx;
-  border: 1rpx solid rgb(234, 234, 234); 
-  margin-right: 2%;
-  font-size: small
-}
-
-.lblock{
-  width: 75%;
-  height: 80%;
-  border-radius: 8rpx;
-  border: 1rpx solid rgb(234, 234, 234);
-  font-size: small
-}
-
-.xlblock{
-  width: 100%;
-  height: 80%;
-   border-radius: 8rpx;
-   border: 1rpx solid rgb(234, 234, 234);
-   font-size: small
-}
-
 .picture{
   display: flex;
   background-color: rgb(239,247,253);
   align-items: center;
   justify-content: center;
-}
-
-.select_box{
-  width: 100%;
-  border-radius: 5rpx;
-  position: relative;
-  z-index: 99;
-}
-
-.select{
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  border-radius: 8rpx;
-  align-items: center;
-  border: 1rpx solid rgb(234, 234, 234);
-}
-
-.select_text{
-  font-size: small;
-  color: rgb(128,128,128);
-  width: 85%;
-  border-width: 2rpx;
-  border-color: rgb(234, 234, 234);
-}
-
-.select_img{
-  width: 70rpx;
-  height: 70rpx;
-  display: block;
-  transition:transform 0.3s;
-}
-
-.select_box .select .select_img_rotate{
-  transform:rotate(180deg); 
-}
-
-.select_box .option_box{
-  position: absolute;
-  top: calc(100% - 1px);
-  width: 100%;
-  box-sizing: border-box;
-  height: 0;
-  overflow-y: auto;
-  background:rgb(255, 255, 255);
-  transition: height 0.3s;
-  border-left:1px solid rgb(234, 234, 234);
-  border-right:1px solid rgb(234, 234, 234);
-}
-
-.select_box .option_box .option{
-  display: block;
-  line-height: 30rpx; 
-  font-size: 35rpx;
-  border-top: 1px solid rgb(234, 234, 234);
-  border-bottom: 1px solid rgb(234, 234, 234);
-  z-index: 2;
-  padding: 10rpx;
 }
 
 .attention{
@@ -195,21 +49,4 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-}
-
-.button_area{
-  height: 300rpx;
-  background-color:white;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-}
-
-.md_button{
-  background-color: rgb(99, 165, 242);
-  width: 30%;
-  height: 30%;
-  color: white;
-  top: 30rpx;
-  font-size: medium;
 }

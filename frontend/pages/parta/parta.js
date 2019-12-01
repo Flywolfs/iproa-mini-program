@@ -1,7 +1,7 @@
 const app = getApp()
 Page({
   data:{
-    selectShow: false,
+    selectShow_title: false,
     selectShow_gender:false,
     selected_values:{
       "title":"",
@@ -23,9 +23,9 @@ Page({
       "door":""
   },
 
-    index: 0,
+    index_title: 0,
     index_gender:0,
-    selectData :['先生','女士','小姐','博士'],
+    title :['先生','女士','小姐','博士'],
     gender:['男','女']
   },
 
@@ -38,9 +38,9 @@ Page({
     }
   },
 
-  selectTap() {
+  selectTap_title() {
     this.setData({
-      selectShow: !this.data.selectShow
+      selectShow_title: !this.data.selectShow_title
     });
   },
 
@@ -50,11 +50,11 @@ Page({
     });
   },
 
-  optionTap(e) {
+  optionTap_title(e) {
     let index = e.currentTarget.dataset.index;//获取点击的下拉列表的下标
     this.setData({
       index: index,
-      selectShow: !this.data.selectShow
+      selectShow_title: !this.data.selectShow_title
     });
     this.data.selected_values["title"] = this.data.selectData[index]
   },
@@ -66,10 +66,6 @@ Page({
       selectShow_gender: !this.data.selectShow_gender
     });
     this.data.selected_values["gender"] = this.data.gender[index_gender]
-  },
-
-  genderChoose:function(e){ 
-    this.data.selected_values["gender"]=e.detail.value;
   },
 
   next:function(e){

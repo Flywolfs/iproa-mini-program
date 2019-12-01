@@ -1,9 +1,9 @@
 const app = getApp()
 Page({ 
   data: {
-    selectShow: false, 
-    index: 0,
-    selectData: ['副學士','學士','碩士','博士'],
+    selectShow_edu: false, 
+    index_edu: 0,
+    edu: ['副學士','學士','碩士','博士'],
     selected_values: {
     "first_edu_level": "",
     "first_edu_org": "",
@@ -38,19 +38,19 @@ Page({
     }
   },
 
-  selectTap() {
+  selectTap_edu() {
     this.setData({
-      selectShow: !this.data.selectShow
+      selectShow_edu: !this.data.selectShow_edu
     });
   },
 
-  optionTap(e) {
+  optionTap_edu(e) {
     let index = e.currentTarget.dataset.index;//获取点击的下拉列表的下标
     this.setData({
       index: index,
-      selectShow: !this.data.selectShow
+      selectShow_edu: !this.data.selectShow_edu
     });
-    this.data.selected_values["first_edu_level"] = this.data.selectData[index]
+    this.data.selected_values["first_edu_level"] = this.data.edu[index]
   },
 
   next: function (e) {

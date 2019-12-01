@@ -1,30 +1,12 @@
 /* *attention.wxss* */
 @import "../page.wxss";
- 
-.wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%
-}
+@import "../base.wxss";
+@import "add_del.wxss";
 
-.main{
-  width: 100%;
+/* attention */
+.att_wrapper{
+  height: 1400rpx;
 }
-
-.head{
-  width: 100%;
-  height: 5%;
-}
-
-.title{ 
-  display: flex;
-  flex-direction: column;
-  height: 8%;
-  background-color: rgba(255, 255, 255, 0);
-  text-align: center;
-} 
 
 .titleItem{
   flex-grow: 1;
@@ -32,14 +14,6 @@
   font-weight: 500;
   font-size: x-large;
 }
-
-.sm_table{
-  height: 50%;
-  background-color: white;
-  top: 50rpx;
-  display: flex;
-  flex-direction: column;
-} 
 
 .attention{
   display: flex;
@@ -55,108 +29,272 @@
   width: 50%;
   margin: 2%,5%,0;
 }
-
-.trh{
-  display: flex;
-  flex-direction: row;
-  width: 85%;
-  justify-content: center;
-  height: 3.5rem;
-  align-items: center;
-  background-color:white;
-  align-self: center;
-}
-
-.tdh{
-    display: flex;
-    width:50%;
-    height: 100%;
-    justify-content: center;
-    text-align: center;
-    background-color: rgb(238, 246, 254);
-    border:1rpx solid rgb(209, 207, 207);
-    color:rgb(99, 165, 242);
-    font-size: small;
-}
-
-.trb{
-  display: flex;
-  flex-direction: row;
-  width: 85%;
-  justify-content: center;
-  height:3rem;
-  align-items: center;
-  background-color: white;
-  align-self: center
-}
-
-.tdb{
-    width:50%;
-    height: 100%;
-    align-items:center;
-    text-align: center;
-    background-color:white;
-    border:1rpx solid rgb(209, 207, 207);
-    font-size: small;
-}
-
-.selections{
-  display: flex;
-  flex-direction: column;
+   
+.att_selections{
   width: 85%;
   height: 6rem;
   align-self: center;
 }
 
-.selection_button{
+.att_selection_button{
   height: 50%;
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-radio .wx-radio-input{ 
-    height: 36rpx; 
-    width: 36rpx;
-    border-radius: 50%;
-    border-color: rgb(96, 147, 245);
-    background: transparent;
- }
-
- /* 选中后的 背景样式 */
-radio .wx-radio-input.wx-radio-input-checked{
-   border-color:rgb(99, 165, 242);
-   background-color: white
+/* viptype */
+.viptype_wrapper{
+  height: 1400rpx;
 }
-/* 选中后的 对勾样式 */
-radio .wx-radio-input.wx-radio-input-checked::before{
-   border-radius: 50%;
-   width: 30rpx; 
-   height: 30rpx;
-   line-height: 36rpx;
-   text-align: center;
-   font-size:0rpx; 
-   background-color:rgb(99, 165, 242);
+
+.viptype_title{
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size:x-large;
+  align-content: center;
+  justify-content: center;
+} 
+
+.viptype_sm_table{
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.viptype_selections{
+  width: 90%;
+  height: 90%;
+}
+
+.viptype_selection{
+  height: 25%;
+  width: 100%;
+}
+
+.selection_button{
+  display: flex;
+  width: 10%;
+  height: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+  justify-content: center;
+  align-items: center;
+}
+
+.type_descs{
+  width: 85%;
+  height: 100%;
+  border: 1px solid  rgb(96, 165, 242);
+  display: flex;
+  flex-direction: column;
+}
+
+.type_desc{
+  height: 50%;
+  font-size: small;
+  text-align: center;
+  color: rgbrgb(96, 165, 242);
 }
 
 .selection_words{
   width: 80%;
 }
-
-.button_area{
-  display: flex;
-  height: 40%;
-  flex-direction: column;
-  background-color:white;
-  align-items:center;
-  /* text-align: center; */
-  /* top: 50rpx; */
+/* parta */
+.a_wrapper{
+  height: 1400rpx;
 }
 
-.bg_button{
-  background-color: rgb(99, 165, 242);
-  width: 90%;
-  height: 20%;
-  color: white;
-  top: 40rpx;
+.a_title{
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: large;
+  align-content: center;
+  justify-content: center;
+} 
+
+.a_tr_key{
+ width: 20%;
+ margin: 0 0 0 10%;
+}
+
+.a_tr_value{
+  width: 65%;
+}
+/* partb */
+.b_wrapper{
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  width: 100%;
+  height: 2400rpx;
+}
+ 
+.b_title{
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: large;
+  align-content: center;
+  justify-content: center;
+} 
+
+.b_tr_key{
+ width: 35%;
+ margin: 0 0 0 5%;
+}
+
+.b_tr_value{
+  width: 55%;
+}
+
+.blue{
+  width:5%;
+  height: 45%;
+  background-color: rgb(110, 160, 211);
+  margin-right: 2%
+}
+
+.picture{
+  display: flex;
+  background-color: rgb(239,247,253);
+  align-items: center;
+  justify-content: center;
+}
+
+.attention{
+  display: flex;
+  height: 5%;
+  color: red;
+  font-size: x-small;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+/* partc */
+.add_del{
+  background-color:white;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+  border-bottom: 5rpx solid rgb(234, 234, 234);
+}
+
+.add_del_area{
+  display: flex;
+  width: 45%;
+  height: 100%;
+  margin: 2.5%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.add_del_desc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  font-size: small
+}
+
+.add_del_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%
+}
+
+.c_title{
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: large;
+  align-content: center;
+  justify-content: center;
+} 
+
+.working_years{
+  background-color:white;
+  text-align: center;
+  height: 100rpx;
+}
+
+.working_block{
+  background-color:rgb(255, 255, 255);
+  height: 600rpx;
+  width: 100%;
+  /* margin: 5% 5%; */
+  border-bottom: 5rpx solid rgb(234, 234, 234);
+}
+
+.c_tr_key{
+ width: 35%;
+ margin: 0 0 0 5%;
+}
+
+.c_tr_value{
+  width: 55%;
+}
+
+.picture{
+  display: flex;
+  background-color: rgb(239,247,253);
+  align-items: center;
+  justify-content: center;
+}
+/* partd */
+.d_wrapper{
+  height: 1400rpx;
+}
+
+.d_title{
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: large;
+  align-content: center;
+  justify-content: center;
+} 
+
+.d_tr_key{
+ width: 35%;
+ margin: 0 0 0 5%;
+}
+
+.d_tr_value{
+  width: 55%;
+}
+/* parte */
+.e_wrapper{
+  height: 1400rpx;
+}
+
+.title{
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: large;
+  align-content: center;
+  justify-content: center;
+}
+
+.signature{
+  border: 5rpx solid #ccc;
+  width:80%;
+  height:200px;
+  margin: 5% 10%;
+}
+
+.clear{
+  text-align: center;
+  flex-direction: column;
+  height: 85%;
+  background-color:rgb(236, 236, 236);
+  color: rgb(142,142,142);
+  width: 81%;
+  margin-left: 10%;
+  margin-right: 10%;
 }

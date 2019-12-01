@@ -1,6 +1,6 @@
 <!-- attention.wxml --> 
 <!-- attenion -->  
-<view class="wrapper" style="display:{{attention}}">  
+<view class="wrapper att_wrapper" style="display:{{attention}}">  
   <view class="main head"></view>
   <view class="main title">
     <view class="titleItem">注意事項</view>
@@ -23,11 +23,11 @@
       <view class="tdb">6年</view>
     </view>
 
-    <radio-group class="selections">
-        <radio class="selection_button" bindtap="change_color" >
+    <radio-group class="selections att_selections">
+        <radio class="att_selection_button" bindtap="change_color" >
           是，我符合上述申請條件。
         </radio>
-        <radio  class="selection_button">
+        <radio  class="att_selection_button">
           否，我不符合上述申請條件。
         </radio>
    </radio-group> 
@@ -37,17 +37,17 @@
   </view>
 </view> 
 <!-- viptype -->
-<view class="wrapper" style="display:{{viptype}}">  
+<view class="wrapper viptype_wrapper" style="display:{{viptype}}">   
   <view class="main head"></view>
-  <view class="main title">
+  <view class="main title viptype_title">
       <text>選擇會員類別</text>
   </view>
   <view class="main progress">
     <image src="/images/timeline/step1.png" mode="widthFix"></image>
   </view>    
-  <view class="main sm_table">
+  <view class="main sm_table viptype_sm_table">
     <!-- <view bindchange="radioChange"> -->
-    <radio-group class="selections">
+    <radio-group class="selections viptype_selections">
       <view class="selection" wx:for="{{radioValues}}" wx:key="type" data-index="{{index}}">
         <view class="selection_button">
           <radio bindtap="select_type">
@@ -62,7 +62,475 @@
   </view>
   <view class="main button_area">
     <button class="md_button" bindtap="viptype_previous">上一步</button>
-    <button class="md_button" bindtap="viptype_next">下一步</button>
+    <button class="md_button" bindtap="viptype_next">下一步       </button>
+  </view>
+</view>
+<!-- parta -->
+<view class="wrapper a_wrapper" style="display:{{parta}}"> 
+  <view class="main head"></view>
+  <view class="main title a_title">
+    <text>PartA</text>
+    <text>個人基本信息</text>
+  </view> 
+  <view class="main progress">
+    <image src="/images/timeline/step2.png" mode="widthFix"></image>
+  </view>
+  <view class="main md_table">
+    <form bindsubmit="parta_next">
+      <view class="table_tr">
+        <view class="tr_key a_tr_key" >頭銜:</view>
+        <view class="tr_value a_tr_value">
+          <view class="select_box">
+            <view class="select" catchtap='selectTap_title'>
+              <text class="select_text">{{title[index_title]}}</text>
+              <image class='select_img {{selectShow_title&&"select_img_rotate"}}'  src="/images/parta/down.png" ></image>
+            </view>
+            <view class='option_box' style='height:{{selectShow_title?(title.length>5?325:title.length*50):0}}rpx;'>
+                <text class='option' wx:for='{{title}}' wx:key='this' data-index='{{index}}' catchtap='optionTap_title'>{{item}}</text>
+            </view>
+          </view>
+        </view>
+      </view> 
+      <view class="table_tr" >
+        <view class="tr_key a_tr_key">中文名:</view>
+        <view class="tr_value a_tr_value">
+          <view class="mblock">
+            <input class="write"  placeholder="姓" name="cn_surname" value="{{selected_values['cn_surname']}}"></input>
+          </view>
+          <view class="mblock">
+            <input class="write" placeholder="名" name="cn_name" value="{{selected_values['cn_name']}}"></input>
+          </view>
+        </view>
+      </view>
+      <view class="table_tr">
+        <view class="tr_key a_tr_key">英文名:</view>
+        <view class="tr_value a_tr_value">
+          <view class="mblock">
+            <input class="write"  placeholder="Surname" name="en_surname" value="{{selected_values['en_surname']}}"></input>
+          </view>
+          <view class="mblock">
+            <input class="write" placeholder="Other Name" name="en_name" value="{{selected_values['en_name']}}"></input>
+          </view>
+        </view>
+      </view>
+      <view class="table_tr">
+        <view class="tr_key a_tr_key">性別:</view>
+        <view class="tr_value a_tr_value">
+          <view class="select_box">
+            <view class="select" catchtap='selectTap_gender'>
+              <text class="select_text">{{gender[index_gender]}}</text>
+              <image class='select_img {{selectShow_gender&&"select_img_rotate"}}'  src="/images/parta/down.png" ></image>
+            </view>
+            <view class='option_box' style='height:{{selectShow_gender?(gender.length>5?325:gender.length*50):0}}rpx;'>
+                <text class='option' wx:for='{{gender}}' wx:key='this' data-index='{{index}}' catchtap='optionTap_gender'>{{item}}</text>
+            </view>
+          </view>
+        </view>
+        <!-- <view class="tr_value">
+          <radio-group bindchange="genderChoose">
+            <radio value="male" checked="{{selected_values['gender']=='male'}}">男</radio>
+            <radio value="female" checked="{{selected_values['gender']=='female'}}">女</radio>
+          </radio-group>
+        </view> -->
+      </view>
+      <view class="table_tr">
+        <view class="tr_key a_tr_key">HKID:</view>
+        <view class="tr_value a_tr_value">
+          <view class="lblock">
+            <input class="write"  placeholder="HKID" name="hkid" value="{{selected_values['hkid']}}"></input>
+          </view>
+          <button style="height:80%;font-size:25rpx;background-color: rgb(99, 165, 242);color:white;font-size=large" bindtap="photo" >拍照</button>
+        </view>
+      </view>
+      <view class="table_tr">
+        <view class="tr_key a_tr_key">郵箱:</view>
+        <view class="tr_value a_tr_value">
+          <view class="xlblock">
+            <input class="write"  placeholder="郵箱" name="email" value="{{selected_values['email']}}"></input>
+          </view>
+        </view>
+      </view>
+      <view class="table_tr">
+        <view class="tr_key a_tr_key">生日:</view>
+        <view class="tr_value a_tr_value">
+          <view class="sblock">
+            <input class="write"  placeholder="年" name="year" value="{{selected_values['doby']}}"></input>
+          </view>
+          <view class="sblock">
+            <input class="write"  placeholder="月" name="month" value="{{selected_values['dobm']}}"></input>
+          </view>
+          <view class="sblock">
+            <input class="write"  placeholder="日" name="day" value="{{selected_values['dobd']}}"></input>
+          </view>
+        </view>
+      </view>
+      <view class="table_tr">
+        <view class="tr_key a_tr_key">電話號碼:</view>
+        <view class="tr_value a_tr_value">
+          <view class="xlblock">
+            <input class="write"  placeholder="電話號碼" name="phone" value="{{selected_values['phone']}}"></input>
+          </view>
+        </view>
+      </view>
+      <view class="table_tr">
+        <view class="tr_key a_tr_key">地址:</view>
+        <view class="tr_value a_tr_value">
+          <view class="ssblock">
+            <input class="write"  placeholder="區" name="district" value="{{selected_values['district']}}"></input>
+          </view>
+          <view class="ssblock">
+            <input class="write"  placeholder="街" name="street" value="{{selected_values['street']}}"></input>
+          </view>
+          <view class="ssblock">
+            <input class="write"  placeholder="樓" name="building" value="{{selected_values['building']}}"></input>
+          </view>
+            <view class="ssblock">
+            <input class="write"  placeholder="門牌" name="door" value="{{selected_values['door']}}"></input>
+          </view>
+        </view>
+      </view>
+      <view class="main button_area">
+        <button class="md_button" bindtap="parta_previous">上一步</button>
+        <button class="md_button" form-type="submit">下一步</button>
+      </view>
+    </form>
+  </view>
+</view>
+<!-- partb -->
+<view class="wrapper b_wrapper" style="display:{{partb}}">   
+  <view class="main head"></view>
+  <view class="main title b_title">
+    <text>PartB</text>
+    <text>個人教育信息</text>
+  </view>
+  <view class="main progress">
+    <image src="/images/timeline/step3.png" mode="widthFix"></image>
+  </view>
+  <view class="main lg_table">
+  <form bindsubmit="partb_next"> 
+    <view class="table_tr">
+     <view class="tr_key b_tr_key">
+      <view class="blue"></view>文憑
+     </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key" >最高教育水平:</view>
+      <view class="tr_value b_tr_value">
+        <view class="select_box">
+          <view class="select" catchtap='selectTap_edu'>
+            <text class="select_text">{{edu[index_edu]}}</text>
+            <image class='select_img {{selectShow_edu&&"select_img_rotate"}}'  src="/images/parta/down.png" ></image>
+          </view>
+              <view class='option_box' style='height:{{selectShow_edu?(edu.length>5?325:edu.length*50):0}}rpx;'>
+                  <text class='option' wx:for='{{edu}}' wx:key='this' data-index='{{index}}' catchtap='optionTap_edu'>{{item}}</text>
+              </view>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key">最高教育院校1:</view>
+      <view class="tr_value b_tr_value">
+        <view class="xlblock">
+         <input class="write"  placeholder="院校1"  name="first_edu_org" value="{{selected_values['first_edu_org']}}"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key">最高教育畢業時間1:</view>
+      <view class="tr_value b_tr_value">
+      <view class="sblock">
+         <input class="write"  placeholder="年" name="first_edu_year" value="{{selected_values['first_edu_year']}}"></input>
+      </view>
+      <view class="sblock">
+         <input class="write"  placeholder="月"  name="first_edu_month" value="{{selected_values['first_edu_month']}}"></input>
+      </view>
+      <view class="sblock">
+         <input class="write"  placeholder="日" name="first_edu_day" value="{{selected_values['first_edu_day']}}"></input>
+      </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key">最高教育專業1:</view>
+      <view class="tr_value b_tr_value">
+        <view class="xlblock">
+         <input class="write"  placeholder="專業1" name="first_edu_prof" value="{{selected_values['first_edu_prof']}}"></input>
+      </view>
+    </view>
+    </view>
+     <view class="table_tr">
+      <view class="tr_key b_tr_key"></view>
+      <view class="tr_value b_tr_value">
+        <view class="xlblock picture" bindtap="">
+          上傳文憑1照片
+        </view>
+      </view>
+     </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key">最高教育院校2*:</view>
+      <view class="tr_value b_tr_value">
+         <view class="xlblock">
+         <input class="write"  placeholder="院校2" name="sec_edu_org" value="{{selected_values['sec_edu_org']}}"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key">最高畢業時間2*:</view>
+      <view class="tr_value b_tr_value">
+      <view class="sblock">
+         <input class="write"  placeholder="年" name="sec_edu_year" value="{{selected_values['sec_edu_year']}}"></input>
+      </view>
+      <view class="sblock">
+         <input class="write"  placeholder="月" name="sec_edu_month" value="{{selected_values['sec_edu_month']}}"></input>
+      </view>
+      <view class="sblock">
+         <input class="write"  placeholder="日" name="sec_edu_day" value="{{selected_values['sec_edu_day']}}"></input>
+      </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key">最高教育專業2*:</view>
+      <view class="tr_value b_tr_value">
+       <view class="xlblock">
+         <input class="write"  placeholder="專業2" name="sec_edu_prof" value="{{selected_values['sec_edu_prof']}}"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key"></view>
+      <view class="tr_value b_tr_value">
+        <view class="xlblock picture" bindtap="">
+          上傳文憑2照片*
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+     <view class="tr_key b_tr_key">
+      <view class="blue"></view>專業證書
+     </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key">授權機構1*:</view>
+      <view class="tr_value b_tr_value">
+        <view class="xlblock">
+         <input class="write"  placeholder="授权机构1" name="first_prof_org" value="{{selected_values['first_prof_org']}}"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key">證書名稱1*:</view>
+      <view class="tr_value b_tr_value">
+        <view class="xlblock">
+         <input class="write"  placeholder="證書名稱1" name="first_prof_name" value="{{selected_values['first_prof_name']}}"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key">獲取日期1*:</view>
+      <view class="tr_value b_tr_value">
+        <view class="xlblock">
+         <input class="write"  placeholder="獲取日期1" name="first_prof_date" value="{{selected_values['first_prof_date']}}"></input>
+        </view>
+      </view>
+    </view>
+     <view class="table_tr">
+      <view class="tr_key b_tr_key"></view>
+      <view class="tr_value b_tr_value">
+        <view class="xlblock picture" bindtap="">
+          上傳證書1掃描件*
+        </view>
+      </view>
+     </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key">授權機構2*:</view>
+      <view class="tr_value b_tr_value">
+        <view class="xlblock">
+         <input class="write"  placeholder="授權機構2" name="sec_prof_org" value="{{selected_values['sec_prof_org']}}"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key">證書名稱2*:</view>
+      <view class="tr_value b_tr_value">
+        <view class="xlblock">
+         <input class="write"  placeholder="證書名稱2" name="sec_prof_name" value="{{selected_values['sec_prof_name']}}"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key">獲取日期2*:</view>
+      <view class="tr_value b_tr_value">
+        <view class="xlblock">
+         <input class="write"  placeholder="获取日期2" name="sec_prof_date" value="{{selected_values['sec_prof_date']}}"></input>
+        </view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key b_tr_key"></view>
+      <view class="tr_value b_tr_value">
+        <view class="xlblock picture" bindtap="">
+          上傳證書2掃描件*
+        </view>
+      </view>
+   </view>
+    <view class="attention">
+        *注:上述標記*的欄目為非必須填寫項
+    </view>
+     <view class="main button_area">
+        <button class="md_button" bindtap="partb_previous">上一步</button>
+        <button class="md_button" form-type="submit">下一步</button>
+    </view>
+  </form>
+  </view>
+</view>
+<!-- partc -->
+<view class="wrapper" style="display:{{partc}}"> 
+  <view class="main head">nothing</view>
+  <view class="main title c_title">
+    <text>PartC</text>
+    <text>工作歷史</text>
+  </view>
+  <view class="main progress">
+    <image src="/images/timeline/step4.png" mode="widthFix"></image>
+  </view>      
+  <view class="main working_years"> 
+    <view class="table_tr">
+      <view class="tr_key c_tr_key" >總工作年期:</view>
+      <view class="tr_value c_tr_value">
+        <view class="select_box">
+          <view class="select" catchtap='selectTap_year'>
+            <text class="select_text">{{year_range[index]}}</text>
+            <image class='select_img {{selectShow&&"select_img_rotate"}}'  src="/images/parta/down.png" ></image>
+          </view>
+          <view class='option_box' style='height:{{selectShow?(year_range.length>5?325:year_range.length*50):0}}rpx;'>
+            <text class='option' wx:for='{{year_range}}' wx:key='this' data-index='{{index}}' catchtap='optionTap_year'>{{item}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="main add_del">
+    <view class="add_del_area" bindtap="insert">
+      <view class="add_del_desc">新增工作歷史</view>
+      <view class="add_del_button iconfont icon-tianjia"></view>
+    </view>
+    <view class="add_del_area" bindtap="delBind">
+      <view class="add_del_desc">刪除工作歷史</view>
+      <view class="add_del_button iconfont icon-shanchutianchong"></view>
+    </view>
+  </view>
+  <form class="main lg_table" bindsubmit="partc_next">
+                <view wx:for="{{selected_values.records}}" class="working_block">
+                        <view class="table_tr">
+                                <view class="tr_key c_tr_key">工作開始日期</view>
+                                <view class="tr_value c_tr_value">
+                                        <view class="sblock"><input class="write"  placeholder="年" name="start_year{{index}}" value="{{item.start_year}}"></input> </view>
+                                        <view class="sblock"><input class="write"  placeholder="月" name="start_month{{index}}" value="{{item.start_month}}"></input> </view>
+                                        <view class="sblock"><input class="write"  placeholder="日" name="start_day{{index}}" value="{{item.start_day}}"></input> </view>
+                                </view>
+                        </view>
+                        <view class="table_tr">
+                                <view class="tr_key c_tr_key">工作結束日期</view>
+                                <view class="tr_value c_tr_value">
+                                        <view class="sblock"><input class="write"  placeholder="年" name="end_year{{index}}" value="{{item.end_year}}"></input> </view>
+                                        <view class="sblock"><input class="write"  placeholder="月" name="end_month{{index}}" value="{{item.end_month}}"></input> </view>
+                                        <view class="sblock"><input class="write"  placeholder="日" name="end_day{{index}}" value="{{item.end_day}}"></input> </view>
+                                </view>
+                        </view>
+                        <view class="table_tr">
+                                <view class="tr_key c_tr_key">公司名稱</view>
+                                <view class="tr_value c_tr_value">
+                                        <view class="xlblock"><input class="write"  placeholder="公司名称" name="company{{index}}" value="{{item.company}}"></input> </view>
+                                </view>
+                        </view>
+                        <view class="table_tr">
+                                <view class="tr_key c_tr_key">職位</view>
+                                <view class="tr_value c_tr_value">
+                                        <view class="xlblock"><input class="write"  placeholder="职位" name="occupation{{index}}" value="{{item.occupation}}"></input> </view>
+                                </view>
+                        </view>
+                        <view class="table_tr">
+                                <view class="tr_key c_tr_key">主要職責</view>
+                                <view class="tr_value c_tr_value">
+                                        <view class="xlblock"><input class="write"  placeholder="主要职责" name="role{{index}}" value="{{item.role}}"></input> </view>
+                                </view>
+                        </view>
+                        <view class="table_tr">
+                          <view class="tr_key c_tr_key"></view>
+                          <view class="tr_value c_tr_value">
+                          <view class="xlblock picture" bindtap="">
+                              上傳工作证明
+                          </view>
+                          </view>
+                        </view>
+                </view>
+                <view class="main button_area">
+                        <button  class="md_button" bindtap="partc_previous">上一步</button>
+                        <button  class="md_button" form-type="submit">下一步</button>
+                </view>
+        </form>
+</view> 
+<!-- partd -->
+<view class="wrapper d_wrapper" style="display:{{partd}}"> 
+  <view class="main head">nothing</view>
+  <view class="main title d_title">
+    <text>PartD</text> 
+    <text>推薦人</text>
+  </view>
+  <view class="main progress">
+    <image src="/images/timeline/step5.png" mode="widthFix"></image>
+  </view>  
+  <form class="main md_table" bindsubmit="partd_next">
+    <view class="table_tr">
+      <view class="tr_key d_tr_key">推薦人1姓名:</view>
+      <view class="tr_value d_tr_value">
+          <view class="mblock"><input class="write" placeholder="姓"  name="first_surname" value="{{selected_values['first_surname']}}"></input></view>
+          <view class="mblock"><input class="write" placeholder="名" name="first_other_name" value="{{selected_values['first_other_name']}}"></input></view>
+          </view>
+      </view>
+    <view class="table_tr">
+      <view class="tr_key d_tr_key">推薦人1會員ID:</view>
+      <view class="tr_value d_tr_value">
+          <view class="xlblock"><input class="write" placeholder="ID" name="first_id" value="{{selected_values['first_id']}}"></input></view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key d_tr_key">推薦人2姓名:</view>
+      <view class="tr_value d_tr_value">
+        <view class="mblock"><input class="write" placeholder="姓" name="sec_surname" value="{{selected_values['sec_surname']}}"></input></view>
+        <view class="mblock"><input class="write" placeholder="名" name="sec_other_name" value="{{selected_values['sec_other_name']}}"></input></view>
+      </view>
+    </view>
+    <view class="table_tr">
+      <view class="tr_key d_tr_key">推薦人2會員ID:</view>
+      <view class="tr_value d_tr_value">
+        <view class="xlblock"><input class="write" placeholder="ID" name="sec_id" value="{{selected_values['sec_id']}}"></input></view>
+      </view>
+    </view>
+    <view class="main button_area">
+      <button class="md_button" bindtap="partd_previous">上一步</button>
+      <button class="md_button" form-type="submit">下一步</button>
+    </view>
+  </form>
+</view>
+<!-- parte --> 
+<view class="wrapper e_wrapper" style="display:{{parte}}"> 
+  <view class="main head">nothing</view>
+  <view class="main title">
+    <text>PartE</text> 
+    <text>個人簽名</text>
+  </view>
+  <view class="main progress">
+    <image src="/images/timeline/step6.png" mode="widthFix"></image>
+  </view>  
+  <view class="main sm_table">
+    <canvas canvas-id="signature" class="signature" disable-scroll="true" bindtouchstart="canvasStart" bindtouchmove="canvasMove" bindtouchend="canvasEnd" touchcancel="canvasEnd" binderror="canvasIdErrorCallback"></canvas>
+    <view class="table_tr" bindtap="cleardraw">
+      <view class="clear">清除簽名</view>
+    </view>
+  </view>
+  <view class="main button_area">
+    <button class="md_button" bindtap="parte_previous">上一步</button>
+    <button class="md_button" bindtap="parte_next">確認提交</button>
   </view>
 </view>
 
