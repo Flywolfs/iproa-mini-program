@@ -1,3 +1,8 @@
 <!--index.wxml--> 
-<view class="backView">
+<view class="wrapper">
+  <view class="top"></view>
+  <view class="intro">
+    <image src="/images/home/iproa-icon.png"></image>
+  </view>
+  <view class="foot"></view>
 </view>

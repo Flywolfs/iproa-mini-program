@@ -1,22 +1,19 @@
 /**index.wxss**/
 @import "../page.wxss";
-.userinfo {
+.wrapper{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.top{
+  height: 200rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.intro{
+  height: 500rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.foot{
+  height: 200rpx;
 }

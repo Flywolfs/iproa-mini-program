@@ -1,5 +1,5 @@
 <!-- attention.wxml --> 
-<!-- attenion -->  
+<!-- attenion -->   
 <view class="wrapper att_wrapper" style="display:{{attention}}">  
   <view class="main head"></view>
   <view class="main title">
@@ -23,11 +23,11 @@
       <view class="tdb">6年</view>
     </view>
 
-    <radio-group class="selections att_selections">
-        <radio class="att_selection_button" bindtap="change_color" >
+    <radio-group class="selections att_selections" bindchange="required">
+        <radio class="att_selection_button" value="yes">
           是，我符合上述申請條件。
         </radio>
-        <radio  class="att_selection_button">
+        <radio  class="att_selection_button" value="no">
           否，我不符合上述申請條件。
         </radio>
    </radio-group> 
@@ -48,9 +48,9 @@
   <view class="main sm_table viptype_sm_table">
     <!-- <view bindchange="radioChange"> -->
     <radio-group class="selections viptype_selections">
-      <view class="selection" wx:for="{{radioValues}}" wx:key="type" data-index="{{index}}">
+      <view class="selection" wx:for="{{radioValues}}" wx:key="type" data-index="{{index}}" bindtap="select_type">
         <view class="selection_button">
-          <radio bindtap="select_type">
+          <radio>
           </radio>
         </view>
         <view class="type_descs">
@@ -62,7 +62,7 @@
   </view>
   <view class="main button_area">
     <button class="md_button" bindtap="viptype_previous">上一步</button>
-    <button class="md_button" bindtap="viptype_next">下一步       </button>
+    <button class="md_button" bindtap="viptype_next">下一步</button>
   </view>
 </view>
 <!-- parta -->
@@ -189,6 +189,9 @@
           </view>
         </view>
       </view>
+      <view class="attention">
+          <view class="at_cell">{{parta_selected}}</view>
+      </view> 
       <view class="main button_area">
         <button class="md_button" bindtap="parta_previous">上一步</button>
         <button class="md_button" form-type="submit">下一步</button>
@@ -260,7 +263,7 @@
      <view class="table_tr">
       <view class="tr_key b_tr_key"></view>
       <view class="tr_value b_tr_value">
-        <view class="xlblock picture" bindtap="">
+        <view class="xlblock picture" bindtap="photo">
           上傳文憑1照片
         </view>
       </view>
@@ -298,7 +301,7 @@
     <view class="table_tr">
       <view class="tr_key b_tr_key"></view>
       <view class="tr_value b_tr_value">
-        <view class="xlblock picture" bindtap="">
+        <view class="xlblock picture" bindtap="photo">
           上傳文憑2照片*
         </view>
       </view>
@@ -335,7 +338,7 @@
      <view class="table_tr">
       <view class="tr_key b_tr_key"></view>
       <view class="tr_value b_tr_value">
-        <view class="xlblock picture" bindtap="">
+        <view class="xlblock picture" bindtap="photo">
           上傳證書1掃描件*
         </view>
       </view>
@@ -367,7 +370,7 @@
     <view class="table_tr">
       <view class="tr_key b_tr_key"></view>
       <view class="tr_value b_tr_value">
-        <view class="xlblock picture" bindtap="">
+        <view class="xlblock picture" bindtap="photo">
           上傳證書2掃描件*
         </view>
       </view>
@@ -375,7 +378,10 @@
     <view class="attention">
         *注:上述標記*的欄目為非必須填寫項
     </view>
-     <view class="main button_area">
+    <view class="attention">
+          <view class="at_cell">{{partb_selected}}</view>
+    </view> 
+    <view class="main button_area">
         <button class="md_button" bindtap="partb_previous">上一步</button>
         <button class="md_button" form-type="submit">下一步</button>
     </view>
@@ -457,12 +463,15 @@
                         <view class="table_tr">
                           <view class="tr_key c_tr_key"></view>
                           <view class="tr_value c_tr_value">
-                          <view class="xlblock picture" bindtap="">
+                          <view class="xlblock picture" bindtap="photo">
                               上傳工作证明
                           </view>
                           </view>
                         </view>
                 </view>
+                <view class="attention">
+                  <view class="at_cell">{{partc_selected}}</view>
+                </view> 
                 <view class="main button_area">
                         <button  class="md_button" bindtap="partc_previous">上一步</button>
                         <button  class="md_button" form-type="submit">下一步</button>
@@ -506,6 +515,9 @@
         <view class="xlblock"><input class="write" placeholder="ID" name="sec_id" value="{{selected_values['sec_id']}}"></input></view>
       </view>
     </view>
+    <view class="attention">
+      <view class="at_cell">{{partd_selected}}</view>
+    </view> 
     <view class="main button_area">
       <button class="md_button" bindtap="partd_previous">上一步</button>
       <button class="md_button" form-type="submit">下一步</button>

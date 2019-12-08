@@ -27,7 +27,12 @@ Page({
       selectShow_title: false,
       selectShow_gender: false,
       selectShow_edu: false, 
-      records: [],
+      attention_selected:"none",
+      parta_selected:"",
+      partb_selected:"",
+      partc_selected:"",
+      partd_selected:"",
+      //这个被所有缓存存储，应该按part区分selected_values
       selected_values: {
         // parta
         "title": "",
@@ -151,6 +156,11 @@ Page({
       })
     },
 
+    //attention
+    required: function(e){
+      this.data.attention_selected = e.detail.value;
+    },
+
     // viptype
     select_type: function (e) {
       var index = e.currentTarget.dataset.index;
@@ -186,10 +196,10 @@ Page({
     optionTap_title(e) {
       let index = e.currentTarget.dataset.index;//获取点击的下拉列表的下标
       this.setData({
-        index: index,
+        index_title: index,
         selectShow_title: !this.data.selectShow_title
       });
-      this.data.selected_values["title"] = this.data.selectData[index]
+      this.data.selected_values["title"] = this.data.title[index]
     },
 
     optionTap_gender(e) {
@@ -219,8 +229,8 @@ Page({
 
     // partc
     insert: function () {
-      console.log(this.data.records);
-      var rc = this.data.records;
+      console.log(this.data.selected_values.records);
+      var rc = this.data.selected_values.records;
       rc.push({ "start_year": "", "start_month": "", "start_day": "", "end_year": "", "end_month": "", "end_day": "", "company": "", "occupation": "", "role": "", "prof_path": "" });
       this.setData({
         'selected_values.records': rc
@@ -252,29 +262,28 @@ Page({
     },
 
     //parte
-  canvasIdErrorCallback: function (e) {
-    console.error(e.detail.errMsg)
-  },
+    canvasIdErrorCallback: function (e) {
+      console.error(e.detail.errMsg)
+    },
 
-  canvasStart: function (event) {
-    isButtonDown = true;
-    arrz.push(0);
-    arrx.push(event.changedTouches[0].x);
-    arry.push(event.changedTouches[0].y);
-    //context.moveTo(event.changedTouches[0].x, event.changedTouches[0].y);
-
-  },
-
-  canvasMove: function (event) {
-    if (isButtonDown) {
-      arrz.push(1);
+    canvasStart: function (event) {
+      isButtonDown = true;
+      arrz.push(0);
       arrx.push(event.changedTouches[0].x);
       arry.push(event.changedTouches[0].y);
-      // context.lineTo(event.changedTouches[0].x, event.changedTouches[0].y);
-      // context.stroke();
-      // context.draw()
-      console.log(arrz);
+      //context.moveTo(event.changedTouches[0].x, event.changedTouches[0].y);
 
+    },
+
+    canvasMove: function (event) {
+      if (isButtonDown) {
+        arrz.push(1);
+        arrx.push(event.changedTouches[0].x);
+        arry.push(event.changedTouches[0].y);
+        // context.lineTo(event.changedTouches[0].x, event.changedTouches[0].y);
+        // context.stroke();
+        // context.draw()
+        console.log(arrz);
     };
 
     for (var i = 0; i < arrx.length; i++) {
@@ -285,8 +294,8 @@ Page({
       };
 
     };
-    context.clearRect(0, 0, canvasw, canvash);
 
+    context.clearRect(0, 0, canvasw, canvash);
     context.setStrokeStyle('#000000');
     context.setLineWidth(4);
     context.setLineCap('round');
@@ -308,19 +317,38 @@ Page({
     context.clearRect(0, 0, canvasw, canvash);
     context.draw(false);
   },
+  
+  checkEmail:function(e){
+  　var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+    if(myReg.test(e)){
+　　　　return true;
+　　 } else {
+　　　　return false;
+    }
+  },
 
-    attention_next:function(e){
-      // wx.navigateTo({
-      //     url: '/pages/viptype/viptype',
-      //   })
-      this.setData({attention:"none",viptype:"true"});
-    },
+  checkDate:function(e){
+    
+  },
+
+  attention_next:function(e){
+    // wx.navigateTo({
+    //     url: '/pages/viptype/viptype',
+    //   })
+    if(this.data.attention_selected=="yes"){
+      this.setData({ attention: "none", viptype: "true" });
+    }
+  },
 
     viptype_next: function (e) {
       // wx.navigateTo({
       //   url: '/pages/parta/parta',
       // })
-      this.setData({ parta: "true", viptype: "none" });
+      for (var i = 0; i < this.data.radioValues.length; i++){
+        if (this.data.radioValues[i]["selected"]){
+          this.setData({ parta: "true", viptype: "none" });
+        } 
+      }
     },
 
     viptype_previous: function (e) {
@@ -347,8 +375,23 @@ Page({
       this.data.selected_values["building"] = e.detail.value.building;
       this.data.selected_values["door"] = e.detail.value.door;
       //TODO 需要加入字段检测
+      this.parta_test();
       wx.setStorageSync('parta', this.data.selected_values);
-      this.setData({ partb: "true", parta: "none" });
+      if(this.data.parta_selected == ""){
+        this.setData({ partb: "true", parta: "none" });
+      }
+    },
+
+    parta_test:function(e){
+      if(this.data.selected_values["cn_surname"] == "" || this.data.selected_values["cn_name"] == "" || this.data.selected_values["en_surname"] == "" || this.data.selected_values["en_name"] == "" || this.data.selected_values["hkid"] == "" || this.data.selected_values["email"] == "" || this.data.selected_values["doby"]== "" || this.data.selected_values["dobm"] == "" || this.data.selected_values["dobd"] == "" || this.data.selected_values["phone"] == "" || this.data.selected_values["district"] == "" || this.data.selected_values["street"] == "" || this.data.selected_values["building"] == "" || this.data.selected_values["door"] == ""){
+        this.setData(
+          { parta_selected: "*請填寫完整上述信息"}
+        )
+      }else{
+        this.setData(
+          { parta_selected: "" }
+        )
+      }
     },
 
     parta_previous:function(e){
@@ -373,8 +416,23 @@ Page({
       this.data.selected_values["sec_prof_date"] = e.detail.value.sec_prof_date;
       this.data.selected_values["sec_prof_name"] = e.detail.value.sec_prof_name;
       //TODO 需要加入字段检测
+      this.partb_test()
       wx.setStorageSync('partb', this.data.selected_values);
-      this.setData({ partc: "true", partb: "none" });
+      if (this.data.partb_selected == "") {
+        this.setData({ partc: "true", partb: "none" });
+      }
+    },
+
+    partb_test:function(e){
+      if (this.data.selected_values["first_edu_org"] == "" || this.data.selected_values["first_edu_year"] == "" || this.data.selected_values["first_edu_month"] == "" || this.data.selected_values["first_edu_day"] == "" || this.data.selected_values["first_edu_prof"] == "") {
+        this.setData(
+          { partb_selected: "*請至少填寫一個學歷的全部信息" }
+        )
+      } else {
+        this.setData(
+          { partb_selected: "" }
+        )
+      }
     },
 
     partb_previous:function(e){
@@ -383,31 +441,53 @@ Page({
 
     partc_next: function (e) {
       var selected = e.detail.value;
-      for (var i = 0; i < this.data.records.length; i++) {
+      console.log(this.data.selected_values.records)
+      var total_fill_in = 0
+      var fill_in_not_null = 0
+      for (var i = 0; i < this.data.selected_values.records.length; i++) {
         for (var item in selected) {
-          if ("start_year" + i == item) {
-            this.data.selected_values.records[i]["start_year"] = selected[item]
-          } else if ("start_month" + i == item) {
-            this.data.selected_values.records[i]["start_month"] = selected[item]
-          } else if ("start_day" + i == item) {
-            this.data.selected_values.records[i]["start_day"] = selected[item]
-          } else if ("end_year" + i == item) {
-            this.data.selected_values.records[i]["end_year"] = selected[item]
-          } else if ("end_month" + i == item) {
-            this.data.selected_values.records[i]["end_month"] = selected[item]
-          } else if ("end_day" + i == item) {
-            this.data.selected_values.records[i]["end_day"] = selected[item]
-          } else if ("company" + i == item) {
-            this.data.selected_values.records[i]["company"] = selected[item]
-          } else if ("occupation" + i == item) {
-            this.data.selected_values.records[i]["occupation"] = selected[item]
-          } else if ("role" + i == item) {
-            this.data.selected_values.records[i]["role"] = selected[item]
+          total_fill_in += 1;
+          if ("start_year" + i == item && selected[item] != "") {
+            this.data.selected_values.records[i]["start_year"] = selected[item];
+            fill_in_not_null += 1;
+          } else if ("start_month" + i == item && selected[item] != "") {
+            this.data.selected_values.records[i]["start_month"] = selected[item];
+            fill_in_not_null += 1;
+          } else if ("start_day" + i == item && selected[item] != "") {
+            this.data.selected_values.records[i]["start_day"] = selected[item];
+            fill_in_not_null += 1;
+          } else if ("end_year" + i == item && selected[item] != "") {
+            this.data.selected_values.records[i]["end_year"] = selected[item];
+            fill_in_not_null += 1;
+          } else if ("end_month" + i == item && selected[item] != "") {
+            this.data.selected_values.records[i]["end_month"] = selected[item];
+            fill_in_not_null += 1;
+          } else if ("end_day" + i == item && selected[item] != "") {
+            this.data.selected_values.records[i]["end_day"] = selected[item];
+            fill_in_not_null += 1;
+          } else if ("company" + i == item && selected[item] != "") {
+            this.data.selected_values.records[i]["company"] = selected[item];
+            fill_in_not_null += 1;
+          } else if ("occupation" + i == item && selected[item] != "") {
+            this.data.selected_values.records[i]["occupation"] = selected[item];
+            fill_in_not_null += 1;
+          } else if ("role" + i == item && selected[item] != "") {
+            this.data.selected_values.records[i]["role"] = selected[item];
+            fill_in_not_null += 1;
           }
         }
       };
-      wx.setStorageSync('partc', this.data.selected_values);
-      this.setData({ partd: "true", partc: "none" });
+      if (total_fill_in == fill_in_not_null && total_fill_in > 0){
+        wx.setStorageSync('partc', this.data.selected_values);
+        this.setData(
+          { partc_selected: "" }
+        )
+        this.setData({ partd: "true", partc: "none" });
+      }else{
+        this.setData(
+          { partc_selected: "*請將所有工作信息填寫完整" }
+        )
+      }
     },
 
     partc_previous: function (e) {
@@ -421,8 +501,23 @@ Page({
       this.data.selected_values["sec_surname"] = e.detail.value.sec_surname;
       this.data.selected_values["sec_other_name"] = e.detail.value.sec_other_name;
       this.data.selected_values["sec_id"] = e.detail.value.sec_id;
+      this.partd_test();
       wx.setStorageSync('partd', this.data.selected_values);
-      this.setData({ parte: "true", partd: "none" });
+      if (this.data.partd_selected == "") {
+        this.setData({ parte: "true", partd: "none" });
+      }
+    },
+
+    partd_test:function(e){
+      if (this.data.selected_values["first_surname"] == "" || this.data.selected_values["first_other_name"] == "" || this.data.selected_values["first_id"] == "" || this.data.selected_values["sec_surname"] == "" || this.data.selected_values["sec_other_name"] == "" || this.data.selected_values["sec_id"] == "") {
+        this.setData(
+          { partd_selected: "*請填寫完整上述信息" }
+        )
+      }else{
+        this.setData(
+          { partd_selected: "" }
+        )
+      }
     },
 
     partd_previous: function (e) {
