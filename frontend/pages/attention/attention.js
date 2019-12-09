@@ -303,42 +303,58 @@ Page({
     context.stroke();
 
     context.draw(false);
-  },
+    },
 
-  canvasEnd: function (event) {
-    isButtonDown = false;
-  },
+    canvasEnd: function (event) {
+      isButtonDown = false;
+    },
 
-  cleardraw: function () {
-    //清除画布
-    arrx = [];
-    arry = [];
-    arrz = [];
-    context.clearRect(0, 0, canvasw, canvash);
-    context.draw(false);
-  },
+    cleardraw: function () {
+      //清除画布
+      arrx = [];
+      arry = [];
+      arrz = [];
+      context.clearRect(0, 0, canvasw, canvash);
+      context.draw(false);
+    },
   
-  checkEmail:function(e){
-  　var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
-    if(myReg.test(e)){
-　　　　return true;
-　　 } else {
-　　　　return false;
-    }
-  },
+    checkEmail:function(email){
+    　var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+      if (myReg.test(email)){
+  　　　　return true;
+  　　 } else {
+  　　　　return false;
+      }
+    },
 
-  checkDate:function(e){
-    
-  },
+    checkDate:function(year,month,day){
+      var year_error = 1;
+      var month_error = 2;
+      var day_error = 3;
+      var correct = 0;
+      var d = new Date();
+      year = parseInt(year);
+      month = parseInt(month);
+      day = parseInt(day);
+      if (isNaN(year) || year > d.getFullYear()){
+          return year_error;
+      }else if(isNaN(month) || month < 1 || month >12){
+          return month_error;
+      }else if(isNaN(day) || day < 1 || day >31){
+          return day_error;
+      }else{
+        return correct
+      }
+    },
 
-  attention_next:function(e){
-    // wx.navigateTo({
-    //     url: '/pages/viptype/viptype',
-    //   })
-    if(this.data.attention_selected=="yes"){
-      this.setData({ attention: "none", viptype: "true" });
-    }
-  },
+    attention_next:function(e){
+      // wx.navigateTo({
+      //     url: '/pages/viptype/viptype',
+      //   })
+      if(this.data.attention_selected=="yes"){
+        this.setData({ attention: "none", viptype: "true" });
+      }
+    },
 
     viptype_next: function (e) {
       // wx.navigateTo({
@@ -388,9 +404,29 @@ Page({
           { parta_selected: "*請填寫完整上述信息"}
         )
       }else{
-        this.setData(
-          { parta_selected: "" }
-        )
+        if(!this.checkEmail(this.data.selected_values["email"])){
+          this.setData(
+            { parta_selected: "*請輸入正確Email格式！" }
+          )
+        }
+        var date_result = this.checkDate(this.data.selected_values["doby"], this.data.selected_values["dobm"], this.data.selected_values["dobd"])
+        if(date_result == 1){
+          this.setData(
+            { parta_selected: "*請輸入正確年份" }
+          )
+        } else if (date_result == 2){
+          this.setData(
+            { parta_selected: "*請輸入正確月份" }
+          )
+        }else if(date_result == 3){
+          this.setData(
+            { parta_selected: "*請輸入正確日期" }
+          )
+        }else{
+          this.setData(
+            { parta_selected: "" }
+          )
+        }
       }
     },
 
